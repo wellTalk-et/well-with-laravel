@@ -1,60 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Well Talk</title>
-    <!-- google fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Pacifico&display=swap" rel="stylesheet">
-    <!-- custom     css-->
-    <!-- <link rel="stylesheet" href="./static/styles/global.css">
-    <link rel="stylesheet" href="./static/styles/nav.css">
-    <link rel="stylesheet" href="./static/styles/index.css"> -->
-    @vite(['resources/styles/global.css', 
-           'resources/styles/nav.css', 
-           'resources/styles/index.css',
-           'resources/scripts/index.js',
-           'resources/scripts/navbar.js',
-           ])
-</head>
-<body>
-    <nav class="nav-bar">
-        <div class="nav-bar-lg">
-         <div class="brand-name">
-             WellTalk
-         </div>
-         <div class="nav-links">
-             <p class="services">Services<span></span></p>
-             <p class="for-professionals">For Professionals</p>
-             <p class="about-us">About Us</p>
-             <p class="pricing">Pricing</p>
-             <button class="primary btn-md js-navigate-to-login" >Get Started</button>
-         </div> 
-         </div>
-        <div class="nav-bar-md">
-         <button class="primary btn-md js-navigate-to-login">Get Started</button>
-         <div class="brand-name">
-             WellTalk
-         </div>
-         <div class="nav-links-md js-nav-links-md">
-             <p class="services">Services <span></span></p>
-             <p class="for-professionals">For Professionals</p>
-             <p class="about-us">About Us</p>
-             <p class="pricing">Pricing</p>
-         </div>
- 
-         <div>
-             <a class="menu-button js-menu-button">
-                <div class="menu-bar start"></div>
-                <div class="menu-bar middle"></div>
-                <div class="menu-bar end"></div>
-             </a>
-         </div>
-        </div>
-     </nav>
- 
+<x-layout>
 
     <!-- heading seciton-->
      <div class="main-value-props-container" id="main-value-props-container">
@@ -74,105 +18,8 @@
         </div> <!-- end left side-->
 
         <div class="right-side container">
-            <div class="carousel-1 js-carousel-1">
-                <!-- vc providers-->
-                <div class="vc-container">
-                    <img class="provider-img" src="./static//assets/users/provider-1.jpg" alt="service provider image">
-                </div>
-                
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-2.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-3.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-4.jpg" alt="service provider image">
-                </div>
-                <div class="vc-container">
-                    <img class="provider-img" src="./static//assets/users/provider-1.jpg" alt="service provider image">
-                </div>
-                
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-2.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-3.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-4.jpg" alt="service provider image">
-                </div>
-                <div class="vc-container">
-                    <img class="provider-img" src="./static//assets/users/provider-1.jpg" alt="service provider image">
-                </div>
-                
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-2.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-3.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-4.jpg" alt="service provider image">
-                </div>
-            </div>
-            <div class="carousel-2 js-carousel-2">
-                <!-- vc providers-->
-                <div class="vc-container">
-                    <img class="provider-img" src="./static//assets/users/provider-1.jpg" alt="service provider image">
-                </div>
-                
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-2.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-3.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-4.jpg" alt="service provider image">
-                </div>
-                <div class="vc-container">
-                    <img class="provider-img" src="./static//assets/users/provider-1.jpg" alt="service provider image">
-                </div>
-                
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-2.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-3.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-4.jpg" alt="service provider image">
-                </div>
-                <div class="vc-container">
-                    <img class="provider-img" src="./static//assets/users/provider-1.jpg" alt="service provider image">
-                </div>
-                
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-2.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-3.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-4.jpg" alt="service provider image">
-                </div>
-                <div class="vc-container">
-                    <img class="provider-img" src="./static//assets/users/provider-1.jpg" alt="service provider image">
-                </div>
-                
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-2.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-3.jpg" alt="service provider image">
-                </div>  
-                <div class="vc-container">
-                        <img class="provider-img" src="./static//assets/users/provider-4.jpg" alt="service provider image">
-                </div>
-
-            </div>
-
+            <x-image-carousel-container class="carousel-1 js-carousel-1" />
+            <x-image-carousel-container class="carousel-2 js-carousel-2" />
         </div>
 
      </div> <!-- end main value props-->
@@ -191,64 +38,13 @@
                   </span> Search
                 </div>
                 <div class="chips container">
-                    <div class="single-chip">
-                        Psychatrist
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-                    <div class="single-chip">
-                        Medical results
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-                    <div class="single-chip">
-                        Sales
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-                    <div class="single-chip">
-                        Home care nurse
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-                    <div class="single-chip">
-                        Doctor
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-                    <div class="single-chip">
-                        Dentist
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-                    <div class="single-chip">
-                        Relationships
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-                    <div class="single-chip">
-                        Depression
-                        <span class="x-mark-container"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 x-mark-svg">
-                        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
-                      </svg>
-                      </span>
-                    </div>
-
-                    
+                    <x-chip>Psychatrist</x-chip>
+                    <x-chip>Medical Results</x-chip>
+                    <x-chip>Therapy</x-chip>
+                    <x-chip> Home care nurse</x-chip>
+                    <x-chip>Doctor</x-chip>
+                    <x-chip>Dentist</x-chip>
+                    <x-chip>Relationships</x-chip>
                 </div>
             </div>
         </div><!-- end right section-->
@@ -257,58 +53,25 @@
      <!-- End about section / description-->
       <div class="partners testimonial container"> <!-- partners testimonial-->
         <div class="partner-carousel partner-carousel-one">
-            <div class="partner">
-                <p class="logo">MCM</p>
-                <p class="name">korean Hospital</p>
-            </div>
-            <div class="partner">
-                <p class="logo">Wudassie</p>
-                <p class="name">diagnostic Center</p>
-            </div>
-            <div class="partner">
-                <p class="logo">MCM</p>
-                <p class="name">korean Hospital</p>
-            </div>
-            <div class="partner">
-                <p class="logo">Tikur Anbessa</p>
-                <p class="name">Specialized Hospital</p>
-            </div>
-            <div class="partner">
-                <p class="logo">Dr. Emebet</p>
-                <p class="name">Higher Specialized Dental Clinic</p>
-            </div>
-            <div class="partner">
-                <p class="logo">Sitota</p>
-                <p class="name">Center for Mental Health Care</p>
-            </div>
-            
+            <x-partner logo="MCM" name="korean Hospital"/>
+            <x-partner logo="Wudassie" name="diagnostic Center"/>
+            <x-partner logo="Tikur Anbessa" name="Specialized Hospital"/>
+            <x-partner logo="Dr. Emebet" name="Higher Specialized Dental Clinic"/>
+            <x-partner logo="Sitota" name="Center for Mental Health Care"/>      
+            <x-partner logo="MCM" name="korean Hospital"/>
+            <x-partner logo="Wudassie" name="diagnostic Center"/>
+            <x-partner logo="Tikur Anbessa" name="Specialized Hospital"/>
+            <x-partner logo="Dr. Emebet" name="Higher Specialized Dental Clinic"/>
+            <x-partner logo="Sitota" name="Center for Mental Health Care"/>            
         </div>
-       <div class="partner-carousel partner-carousel-two">
-        <div class="partner">
-            <p class="logo">Tikur Anbessa</p>
-            <p class="name">Specialized Hospital</p>
-        </div>
-        <div class="partner">
-            <p class="logo">Dr. Emebet</p>
-            <p class="name">Higher Specialized Dental Clinic</p>
-        </div>
-        <div class="partner">
-            <p class="logo">Sitota</p>
-            <p class="name">Center for Mental Health Care</p>
-        </div>
-        <div class="partner">
-            <p class="logo">MCM</p>
-            <p class="name">korean Hospital</p>
-        </div>
-        <div class="partner">
-            <p class="logo">Wudassie</p>
-            <p class="name">diagnostic Center</p>
-        </div>
-        <div class="partner">
-            <p class="logo">MCM</p>
-            <p class="name">korean Hospital</p>
-        </div>
-       </div>
+       <!-- <div class="partner-carousel partner-carousel-two">
+            <x-partner logo="Tikur Anbessa" name="Specialized Hospital" />
+            <x-partner logo="Dr. Emebet" name="Higher Specialized Dental Clinic" />
+            <x-partner logo="Sitota" name="Center for Mental Health Care" />  
+            <x-partner logo="MCM" name="korean Hospital" />
+            <x-partner logo="Wudassie" name="diagnostic Center" />
+            <x-partner logo="MCM" name="korean Hospital" />
+       </div> -->
       </div> <!-- End partners testimonial-->
 
       <div class="getting-started-section js-getting-started"> <!-- Getting started-->
@@ -358,31 +121,33 @@
                     </div><!-- End step-cards -->
         
                     <div class="phone-container js-lg-phone-container">
-                        <img src="./static/assets/other-image-assets/match-with-mentor.png" class="first right-section phone screen phone-enabled" alt="matching with the provider image">
-                        <img src="./static/assets/other-image-assets/start-your-session.png " class="second right-section phone screen" alt="two people chatting over video">
-                        <img src="./static/assets/other-image-assets/track-your-habits.png" class="third right-section phone screen" alt="person taking while walking">
-                        <img src="./static/assets/other-image-assets/change-your-mentor-screen.png" class="fourth right-section phone screen"  alt="habit tracking screenshot section">
+
+                        <x-image path='resources/assets/other-image-assets/match-with-mentor.png' alt="matching with the provider image" class="first right-section phone screen phone-enabled" />
+                        <x-image path='resources/assets/other-image-assets/start-your-session.png' alt="two people chatting over video" class="second right-section phone screen" />
+                        <x-image path='resources/assets/other-image-assets/track-your-habits.png'  alt="person taking while walking" class="third right-section phone screen" />
+                        <x-image path='resources/assets/other-image-assets/change-your-mentor-screen.png' alt="habit tracking screenshot section" class="fourth right-section phone screen" />
+                        
+                        
                     </div>
                 </div>
             </div> <!-- End Desktop getting started -->
             <div class="getting-started-section-sm js-getting-started-sm"> <!-- Mobile Getting started -->
                     <div class="all-getting-started js-all-getting-started">
-                         <div class="getting-started first" id="getting-started-first">
-                        <div class="phone-container">
-                        <img class="first phone screen right-section" src="./static/assets/other-image-assets/match-with-mentor.png" alt="">
-                        <!-- <img src="./static/assets/users/match-with-mentor.png" class="second right-section phone screen" alt="matching with the provider image"> -->
-                        </div>
-                        <div class="single step-guide">
-                            <div class="step">1</div>
-                            <div class="instruction">
-                                <p class="title">Match with your Mentor</p>
-                                <p class="description">we provided some questions to filter out the best mentor for you it will take you less than 10 minutes. You can skip this process and choose your mentor by yourself too.</p>
+                        <div class="getting-started first" id="getting-started-first">
+                            <div class="phone-container">
+                            <x-image class="first phone screen right-section" path="resources/assets/other-image-assets/match-with-mentor.png" alt="" />
                             </div>
-                        </div><!-- end single step guide-->
-                         </div>
+                            <div class="single step-guide">
+                                <div class="step">1</div>
+                                <div class="instruction">
+                                    <p class="title">Match with your Mentor</p>
+                                    <p class="description">we provided some questions to filter out the best mentor for you it will take you less than 10 minutes. You can skip this process and choose your mentor by yourself too.</p>
+                                </div>
+                            </div><!-- end single step guide-->
+                        </div>
                          <div class="getting-started second" id="getting-started-second">
                             <div class="phone-container">
-                                 <img src="./static/assets/other-image-assets/start-your-session.png" class="second right-section phone screen" alt="matching with the provider image"> 
+                                 <x-image path="resources/assets/other-image-assets/start-your-session.png" class="second right-section phone screen" alt="matching with the provider image" /> 
                             </div>
                         <div class="step-cards">
                             <div class="single step-guide">
@@ -396,7 +161,7 @@
                         </div>
                         <div class="getting-started third" id="getting-started-third">
                             <div class="phone-container">
-                                <img class="first phone screen right-section" src="./static/assets/other-image-assets/track-your-habits.png" alt="">
+                                <x-image class="first phone screen right-section" path="resources/assets/other-image-assets/track-your-habits.png" alt="" />
                                 <!-- <img src="./static/assets/users/match-with-mentor.png" class="second right-section phone screen" alt="matching with the provider image"> -->
                             </div>
                           <div class="step-cards">
@@ -411,7 +176,7 @@
                         </div>
                         <div class="getting-started fourth" id="getting-started-fourth">
                             <div class="phone-container">
-                                <img class="first phone screen right-section" src="./static/assets/other-image-assets/change-your-mentor-screen.png" alt="">
+                                <x-image class="first phone screen right-section" path="resources/assets/other-image-assets/change-your-mentor-screen.png" alt="" />
                                 <!-- <img src="./static/assets/users/match-with-mentor.png" class="second right-section phone screen" alt="matching with the provider image"> -->
                             </div>
                           <div class="step-cards">
@@ -444,101 +209,43 @@
                 <div class="single-why-description-container js-single-why-description" data-item="first">
                     <div class="single why-description">
                         <p class="description">Connect with your mentor anytime, anywhere</p>
-                        <!-- chevron down -->
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                              </svg>
-                              <div class="drop-down-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                            </div> -->
                         </div>
                 </div>
                 <div class="single-why-description-container js-single-why-description" data-item="second">
                     <div class="single why-description">
                         <p class="description">Message your mentor anytime</p>
-                        <!-- chevron down -->
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                              </svg>
-                              <div class="drop-down-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                            </div> -->
                         </div>
                 </div>
                 <div class="single-why-description-container js-single-why-description" data-item="third">
                     <div class="single why-description">
                       <p class="description">Easy appointment scheduling</p>
-                            <!-- chevron down -->
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                              </svg>
-                              <div class="drop-down-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                            </div> -->
                     </div>
                 </div>
                 <div class="single-why-description-container js-single-why-description" data-item="fourth">
                     <div class="single why-description">
                         <!-- chevron down -->
                         <p class="description">No more taxi waiting line and traffic lights</p>
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                              </svg>
-                              <div class="drop-down-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                            </div> -->
                         </div> 
                 </div>
                 <div class="single-why-description-container js-single-why-description" data-item="fifth">
                     <div class="single why-description">
                         <p class="description">No more waiting for your mentor</p>
-                        <!-- chevron down -->
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                              </svg>
-                              <div class="drop-down-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                            </div> -->
                         </div>
                 </div>
                 <div class="single-why-description-container js.single-why-description" data-item="sixth">
                     <div class="single why-description">
                         <p class="description">Switch your mentor anytime</p>
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                            </svg>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                              </svg>
-                              <div class="drop-down-desc">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                            </div> -->
                         </div>
                 </div>
             </div>
             <!-- right section switched-->
             <div class="image-container">
-                <img class="img reason-guide first reason-active" src="./static/assets/other-image-assets/person-sitting-on-couch.png" alt="">
-                <img class="img reason-guide second" src="./static/assets/other-image-assets/message-your-mentor.png" alt="">
-                <img class="img reason-guide third" src="./static/assets/other-image-assets/appointment.png" alt="">
-                <img class="img reason-guide fourth" src="./static/assets/other-image-assets/waiting-for-taxi.png" alt="">
-                <img class="img reason-guide fifth" src="./static/assets/other-image-assets/waiting-a-mentor.png" alt="">
-                <img class="img reason-guide sixth" src="./static/assets/other-image-assets/change-your-mentor.png" alt="">
+                <x-image class="img reason-guide first reason-active" path="resources/assets/other-image-assets/person-sitting-on-couch.png" alt="" /> 
+                <x-image class="img reason-guide second" path="resources/assets/other-image-assets/message-your-mentor.png" alt="" />
+                <x-image class="img reason-guide third" path="resources/assets/other-image-assets/appointment.png" alt="" />
+                <x-image class="img reason-guide fourth" path="resources/assets/other-image-assets/waiting-for-taxi.png" alt="" />
+                <x-image class="img reason-guide fifth" path="resources/assets/other-image-assets/waiting-a-mentor.png" alt="" />
+                <x-image class="img reason-guide sixth" path="resources/assets/other-image-assets/change-your-mentor.png" alt="" />
             </div>
         </div>
       </div> <!-- End why section -->
@@ -546,7 +253,7 @@
     <div class="achivements-section"> <!-- Achivements section-->
         <div class="left">
            <div class="heading">
-                <p><img src="./static/assets/other-image-assets/messages-back-forth.svg" alt=""> Video Calls</p>
+                <p><x-image path="resources/assets/other-image-assets/messages-back-forth.svg" alt="" /> Video Calls</p>
                 <p>Talk it out. Face-to-face.</p>
            </div>
            <div class="search container">
@@ -555,13 +262,13 @@
                     <button class="btn primary btn-md">Find mentors</button>
                 </div>
                 <div class="suggested-keywords">
-                    <div class="single-keyword">Start up founders</div>
-                    <div class="single-keyword">Sales Person</div>
-                    <div class="single-keyword">Psychatrist</div>
-                    <div class="single-keyword">Doctor</div>
-                    <div class="single-keyword">Entrepreneur</div>
-                    <div class="single-keyword">Home care nurse</div>
-                    <div class="single-keyword">Leadership mentor</div>
+                    <x-keyword>Start up founders</x-keyword>
+                    <x-keyword>Sales Person</x-keyword>
+                    <x-keyword>Psychatrist</x-keyword>
+                    <x-keyword>Doctor</x-keyword>
+                    <x-keyword>Entrepreneur</x-keyword>
+                    <x-keyword>Home care nurse</x-keyword>
+                    <x-keyword>Leadership mentor</x-keyword>
                 </div>
             </div>
             <div class="achivement stats">
@@ -582,116 +289,14 @@
         </div> <!-- end left section-->
         <div class="right"> <!-- right section-->
             <div class="highlighted-providers highlighted-providers-one">
-                <div class="highlighted provider">
-                    <div class="provider-img">
-                        <img src="./static/assets/users/provider-featured.jpg" alt="">
-                    </div>
-                    <div class="provider-full-info">
-                        <div class="user-info">
-                            <p class="username">Dr. John Doe <span class="rating"><img src="./static/assets/other-image-assets/star.svg" alt="" >5.0</span></p>
-                            <p class="profession">psychatrist</p>
-                        </div>
-                        <div class="suggested-keywords">
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                        </div>
-                    </div>
-                </div> <!-- end single provider -->
-                <div class="highlighted provider">
-                    <div class="provider-img">
-                        <img src="./static/assets/users/provider-featured.jpg" alt="">
-                    </div>
-                    <div class="provider-full-info">
-                        <div class="user-info">
-                            <p class="username">Dr. John Doe <span class="rating"><img src="./static/assets/other-image-assets/star.svg" alt="" >5.0</span></p>
-                            <p class="profession">psychatrist</p>
-                        </div>
-                        <div class="suggested-keywords">
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                        </div>
-                    </div>
-                </div> <!-- end single provider -->
-                <div class="highlighted provider">
-                    <div class="provider-img">
-                        <img src="./static/assets/users/provider-featured.jpg" alt="">
-                    </div>
-                    <div class="provider-full-info">
-                        <div class="user-info">
-                            <p class="username">Dr. John Doe <span class="rating"><img src="./static/assets/other-image-assets/star.svg" alt="" >5.0</span></p>
-                            <p class="profession">psychatrist</p>
-                        </div>
-                        <div class="suggested-keywords">
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                        </div>
-                    </div>
-                </div> <!-- end single provider -->
+                <x-highlighted-provider class="highlighted provider" path='resources/assets/users/provider-featured.jpg' />
+                <x-highlighted-provider class="highlighted provider" path='resources/assets/users/provider-featured.jpg' />
+                <x-highlighted-provider class="highlighted provider" path='resources/assets/users/provider-featured.jpg' />
             </div>
             <div class="highlighted-providers highlighted-providers-two">
-                <div class="highlighted provider">
-                    <div class="provider-img">
-                        <img src="./static/assets/users/provider-featured.jpg" alt="">
-                    </div>
-                    <div class="provider-full-info">
-                        <div class="user-info">
-                            <p class="username">Dr. John Doe <span class="rating"><img src="./static/assets/other-image-assets/star.svg" alt="" >5.0</span></p>
-                            <p class="profession">psychatrist</p>
-                        </div>
-                        <div class="suggested-keywords">
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                        </div>
-                    </div>
-                </div> <!-- end single provider -->
-                <div class="highlighted provider">
-                    <div class="provider-img">
-                        <img src="./static/assets/users/provider-featured.jpg" alt="">
-                    </div>
-                    <div class="provider-full-info">
-                        <div class="user-info">
-                            <p class="username">Dr. John Doe <span class="rating"><img src="./static/assets/other-image-assets/star.svg" alt="" >5.0</span></p>
-                            <p class="profession">psychatrist</p>
-                        </div>
-                        <div class="suggested-keywords">
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                        </div>
-                    </div>
-                </div> <!-- end single provider -->
-                <div class="highlighted provider">
-                    <div class="provider-img">
-                        <img src="./static/assets/users/provider-featured.jpg" alt="">
-                    </div>
-                    <div class="provider-full-info">
-                        <div class="user-info">
-                            <p class="username">Dr. John Doe <span class="rating"><img src="./static/assets/other-image-assets/star.svg" alt="" >5.0</span></p>
-                            <p class="profession">psychatrist</p>
-                        </div>
-                        <div class="suggested-keywords">
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                            <div class="single-keyword">Relationship</div>
-                        </div>
-                    </div>
-                </div> <!-- end single provider -->
+                <x-highlighted-provider class="highlighted provider" path='resources/assets/users/provider-featured.jpg' />
+                <x-highlighted-provider class="highlighted provider" path='resources/assets/users/provider-featured.jpg' />
+                <x-highlighted-provider class="highlighted provider" path='resources/assets/users/provider-featured.jpg' />
             </div>
         </div> <!-- end right section-->
     </div> <!-- End Achivements section-->
@@ -701,104 +306,46 @@
         <div class="faq-section-description">You asked, we listened. Find trust-worthy answered by us</div>
           <div class="faq-section">
               <div class="image-container">
-                  <img class="img" src="./static/assets/other-image-assets/person-sitting-on-couch.svg" alt="">
+                  <x-image class="img" path="resources/assets/other-image-assets/person-sitting-on-couch.svg" alt="" />
               </div>
              <div class="faq-container-with-pagination">
                 <div class="faq-descriptions container">
-                    <div class="single-faq-description-container">
-                        <details class="single faq-description">
-                            <summary><p class="description">Connect with your mentor anytime, anywhere</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                                  </svg></summary>
-                                  <div class="drop-down-desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                                </div>
-                        </details>
-                          
-                       
-                          
-                    </div>
-                    <div class="single-faq-description-container">
-                        <details class="single faq-description">
-                            <summary><p class="description">Message your mentor anytime</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                                  </svg></summary>
-                                  <div class="drop-down-desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                                </div>
-                        </details>
-                          
-                       
-                          
-                    </div>
-                    <div class="single-faq-description-container">
-                        <details class="single faq-description">
-                            <summary><p class="description">Easy appointment scheduling</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                                  </svg></summary>
-                                  <div class="drop-down-desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                                </div>
-                        </details>
-                    </div>
-                    
-                    <div class="single-faq-description-container">
-                        <details class="single faq-description">
-                            <summary><p class="description">No more taxi waiting line and traffic lights</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                                  </svg></summary>
-                                  <div class="drop-down-desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                                </div>
-                        </details>
-                    </div>
+                    <x-single-faq>
+                        <x-slot:heading>
+                        Connect with your mentor anytime, anywhere
+                        </x-slot:heading>
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
+                    </x-single-faq>
 
-                    <div class="single-faq-description-container">
-                        <details class="single faq-description">
-                            <summary><p class="description">No more waiting your mentor</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                                  </svg></summary>
-                                  <div class="drop-down-desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                                </div>
-                        </details>
-                    </div>
+                    <x-single-faq>
+                        <x-slot:heading>
+                        Message your mentor anytime
+                        </x-slot:heading>
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
+                    </x-single-faq>
 
-                   <div class="single-faq-description-container">
-                        <details class="single faq-description">
-                            <summary><p class="description">Switch your mentor anytime</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-down chevron">
-                                    <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 chevron-up chevron">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                                  </svg></summary>
-                                  <div class="drop-down-desc">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
-                                </div>
-                        </details>
-                    </div>
-                </div>
+                    <x-single-faq>
+                        <x-slot:heading>
+                        Easy appointment scheduling
+                        </x-slot:heading>
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
+                    </x-single-faq>
+
+                    <x-single-faq>
+                        <x-slot:heading>
+                        No more taxi waiting line and traffic lights
+                        </x-slot:heading>
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
+                    </x-single-faq>
+
+                    <x-single-faq>
+                        <x-slot:heading>
+                        No more waiting for your mentor
+                        </x-slot:heading>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur autem doloribus magni dignissimos atque veniam accusantium natus, laborum dolore ex quos pariatur? Odit qui explicabo veniam alias quibusdam vero?
+                    </x-single-faq>
+            </div>
+
                 <!-- pagination -->
                 <div class="pagination-container">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5 chevron-left pagination">
@@ -824,10 +371,10 @@
             <div class="branding">
                 <h3>well</h3>
                 <div class="social-accounts">
-                    <span class="icon facebook"><a href="#"><img src="static/assets/icons/facebook.svg" alt=""></a></span>
-                    <span class="icon x"><a href="#"><img src="static/assets/icons/x.svg" alt=""></a></span>
-                    <span class="icon instagram"><a href="#"><img src="static/assets/icons/instagram.svg" alt=""></a></span>
-                    <span class="icon linkedin"><a href="#"><img src="static/assets/icons/linked-in.svg" alt=""></a></span>
+                    <span class="icon facebook"><a href="#"><x-image path="resources/assets/icons/facebook.svg" alt=""/></a></span>
+                    <span class="icon x"><a href="#"><x-image path="resources/assets/icons/x.svg" alt=""/></a></span>
+                    <span class="icon instagram"><a href="#"><x-image path="resources/assets/icons/instagram.svg" alt="" /></a></span>
+                    <span class="icon linkedin"><a href="#"><x-image path="resources/assets/icons/linked-in.svg" alt="" /></a></span>
                 </div>
             </div>
             <div class="contact-us">
@@ -851,7 +398,7 @@
                 </div>
             </div>
             <div class="footer-explore">
-                <img class="footer-img" src="static/assets/other-image-assets/footer-explore.png" alt="">
+                <x-image class="footer-img" path="resources/assets/other-image-assets/footer-explore.png" alt="" />
                 <p>Explore our success</p>
             </div>
             <a class="go-to-start-btn" href="#main-value-props-container">
@@ -863,11 +410,4 @@
                 <p class="current-year js-current-year"></p>
             </div>
         </footer>
-
-
-
-        <!-- <script src="./static/scripts/navbar.js"></script> -->
-        <!-- <script src="./static/scripts/index.js" type="module"></script> -->
-
-</body>
-</html>
+</x-layout>

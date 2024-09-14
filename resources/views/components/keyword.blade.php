@@ -1,0 +1,1 @@
+<div class="single-keyword">{{ $slot }}</div>
