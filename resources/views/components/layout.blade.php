@@ -14,10 +14,17 @@
     <link rel="stylesheet" href="./static/styles/index.css"> -->
     @vite(['resources/styles/global.css', 
            'resources/styles/nav.css', 
+           'resources/styles/footer.css', 
+           'resources/styles/login-register.css' ,
+           'resources/styles/question.css' ,
            'resources/styles/index.css',
-           'resources/scripts/index.js',
+
            'resources/scripts/navbar.js',
+           'resources/scripts/register.js',
+           'resources/scripts/index.js',
+           'resources/scripts/question.js',
            ])
+
 </head>
 <body>
     <nav class="nav-bar">
@@ -56,10 +63,6 @@
      </nav>
  
     {{ $slot }}
-
-    
-        <!-- <script src="./static/scripts/navbar.js"></script> -->
-        <!-- <script src="./static/scripts/index.js" type="module"></script> -->
 
 </body>
 </html>

@@ -410,4 +410,4 @@
                 <p class="current-year js-current-year"></p>
             </div>
         </footer>
-</x-layout>
+    </x-layout>

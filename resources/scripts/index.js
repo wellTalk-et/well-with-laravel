@@ -1,4 +1,3 @@
-
 (function getCurrentYear(){
     const p = document.querySelector('.js-current-year');
     p.textContent = `© ${new Date().getFullYear()} — Copyright`

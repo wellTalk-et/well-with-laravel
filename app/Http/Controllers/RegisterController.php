@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Password;
+use Illuminate\Validation\ValidationException;
 
 class RegisterController extends Controller
 {
@@ -11,7 +15,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        // return view('');
+        return view('auth.register');
     }
 
     /**
@@ -20,9 +24,23 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         // validate
-        //create user
+     $attribute = $request->validate([
+        'first_name' => ['required'],
+        'last_name' => ['required'],
+        'email' => ['required', 'email', 'max:254', 'unique:users,email' ],
+        'password' => ['required', Password::min(6)],
+        "country" => ['required'],
+      ]);
+        
+      if(!$request['checkbox']){
+        throw ValidationException::withMessages(['checkbox' => 'you must agree for our terms and agreements']);
+    }
+    $user = User::create($attribute);
         // login
+
+    Auth::login($user);
         //redirect
+    redirect('/questions?q=1');
     }
 
 }

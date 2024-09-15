@@ -1,47 +1,53 @@
-const questions = [
-    {
-        question:`
-            <p class="question">
-                I'm looking for a provider that will provide...
-            </p>
-            <select type="dropdown" name="country" class="input dropdown" id="js-country" title="Country has to be provided" required autocomplete="country">
-                <option value="anxiety-therapy">anxiety therapy</option>
-                <option value="family-therapy">family therapy</option>
-            </select>
+// const questions = [
+//     {
+//         question:`
+//             <p class="question">
+//                 I'm looking for a provider that will provide...
+//             </p>
+//             <select type="dropdown" name="country" class="input dropdown" id="js-country" title="Country has to be provided" required autocomplete="country">
+//                 <option value="anxiety-therapy">anxiety therapy</option>
+//                 <option value="family-therapy">family therapy</option>
+//             </select>
 
-            <button class="btn primary btn-md">Continue</button>
-    `,
-    answer: null
-    },
-    {
-        question: `
-            <p class="question">
-                Have you and your partner worked with a couples counselor before?
-            </p>
+//             <button class="btn primary btn-md">Continue</button>
+//     `,
+//     answer: null
+//     },
+//     {
+//         question: `
+//             <p class="question">
+//                 Have you and your partner worked with a couples counselor before?
+//             </p>
            
-           <div class="choice">
-               <button class="btn btn-outlined yes" role="radio">Yes</button>
-               <button class="btn btn-outlined no" role="radio">No</button>
-           </div>
+//            <div class="choice">
+//                <button class="btn btn-outlined yes" role="radio">Yes</button>
+//                <button class="btn btn-outlined no" role="radio">No</button>
+//            </div>
 
-    `,
-    answer: null
-    }, 
-   {
-    question:  `
-    <p class="question">
-        I'm looking for a provider that will provide...
-    </p>
-    <select type="dropdown" name="country" class="input dropdown" id="js-country" title="Country has to be provided" required autocomplete="country">
-        <option value="anxiety-therapy">anxiety therapy</option>
-        <option value="usa">family therapy</option>
-    </select>
+//     `,
+//     answer: null
+//     }, 
+//    {
+//     question:  `
+//     <p class="question">
+//         I'm looking for a provider that will provide...
+//     </p>
+//     <select type="dropdown" name="country" class="input dropdown" id="js-country" title="Country has to be provided" required autocomplete="country">
+//         <option value="anxiety-therapy">anxiety therapy</option>
+//         <option value="usa">family therapy</option>
+//     </select>
 
-    <button class="btn primary btn-md">Continue</button>
-`,
-answer: null
-}
-]
+//     <button class="btn primary btn-md">Continue</button>
+// `,
+// answer: null
+// }
+// ]
+// const questions = [];
+
+const questions = []
+const questionDataDiv = document.getElementById('question-data');
+const questionsJson = questionDataDiv.dataset.questions;
+const questionsObj = JSON.parse(questionsJson);
 
 let questionIndex = 0, currentQuestion;
 const questionContainer = document.querySelector('.js-question-container');
@@ -74,7 +80,7 @@ function renderQuestion(index){
             } else {
                 progressBar.style.width = `100%`;
                 setTimeout(() => {
-                    window.location.href = 'index.html'
+                    window.location.href = 'plan.html'
                 }, 600)
             }
         })
