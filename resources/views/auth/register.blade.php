@@ -1,9 +1,15 @@
 <x-layout>
+        @vite([
+        'resources/styles/login-register.css' ,
+        ])
 
-<main>
+    <main>
         
             <form action="/register" method="POST" class="register-form" id="js-register-form">
                 @csrf
+                <input type="radio" name="role" value="mentor" id="radio-mentor" class="hidden" checked />
+                <input type="radio" name="role" value="mentee" id="radio-mentee" class="hidden" />
+               <!-- social auth -->
                 <form action="" method="POST">
                     @csrf
                     <div class="register container">
@@ -11,13 +17,11 @@
                     <section class="first">
                         <div class="preference-container">
                             <div class="text">
-                                <p class="mentor js-mentor">I'm a mentor</p>
                                 <p class="mentee js-mentee">I need a mentor</p>
-                                <input type="radio" name="role" value="mentor" id="radio-mentor" class="hidden" />
-                                <input type="radio" name="role" value="mentee" id="radio-mentee" class="hidden" />
+                                <p class="mentor js-mentor">I'm a mentor</p>
                             </div>
                             <div class="overlay">
-                                <div class="first mentor-selected js-overlay"></div>
+                                <div class="first mentee-selected js-overlay"></div>
                             </div>
                         </div>
                         <div class="social-logins">
@@ -30,12 +34,13 @@
                             <div></div>
                         </div>
                     </section> 
-                </form>
+                </form> 
 
             <section class="middle">
+               
                 <x-forms.form-section class="input" name="first_name" id="js-fname" pattern="^[a-zA-Z]{3,}" title="Invalid name"  placeholder="John" :required="true">First Name </x-forms.form-section>
 
-                <x-forms.form-section class="input" name="last_name" id="js-lname" pattern="^[a-zA-Z]{3,}" title="Invalid name" :required="true"  placeholder="Doe">Last Name </x-forms.form-section>
+                <x-forms.form-section class="input" name="last_name" id="js-lname" pattern="^[a-zA-Z]{3,}" title="Invalid name" :required="true"  placeholder="Doe" value='abey asmare'>Last Name </x-forms.form-section>
 
 
                 <x-forms.form-section type="email" class="input" name="email" id="js-email" title="Invalid Email" :required="true" placeholder="john@gmail.com"  autocomplete="email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
@@ -94,13 +99,15 @@
                 @enderror
                 <div class="login section">
                     <input type="submit" name="submit" value="Get me started" id="submit btn" class="input btn btn-lg primary " />
-                    <p>Already have an account? <a href="login.html">Log in</a></p>
+                    <p>Already have an account? <a href="/login">Log in</a></p>
                 </div>
 
             </section>
         </form>
         </div> <!-- end register container-->
     </main>
+    @vite([
+        'resources/scripts/register.js'
+        ])
 
-    <!-- <script type="module" src="./static/scripts/register.js"></script> -->
 </x-layout>

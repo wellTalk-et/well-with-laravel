@@ -15,7 +15,7 @@ class QuestionSeeder extends Seeder
     public function run(): void
     {
         //
-        $questions = Question::factory(6)->create();
+        $questions = Question::factory(20)->create();
         foreach($questions as $question){
             $question->option('yes');
             $question->option('no');

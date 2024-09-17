@@ -155,6 +155,7 @@ body{
     border: none;
     border-radius: 8px;
     color: var(--light-bg);
+    text-decoration: none;
 }
 
 .main-value-props-container .right-side.container{

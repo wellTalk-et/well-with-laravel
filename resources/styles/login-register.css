@@ -357,12 +357,12 @@ section.middle > .form-with-desc *{
     bottom:0;
     transition: all .2s;
 }
-.preference-container .overlay .first.mentor-selected{
+.preference-container .overlay .first.mentee-selected{
     left: 0;
     right: 50%;
 
 }
-.preference-container .overlay .first.mentee-selected{
+.preference-container .overlay .first.mentor-selected{
     left: 50%;
     right: 0;
 

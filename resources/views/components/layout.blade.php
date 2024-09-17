@@ -15,14 +15,9 @@
     @vite(['resources/styles/global.css', 
            'resources/styles/nav.css', 
            'resources/styles/footer.css', 
-           'resources/styles/login-register.css' ,
-           'resources/styles/question.css' ,
-           'resources/styles/index.css',
+
 
            'resources/scripts/navbar.js',
-           'resources/scripts/register.js',
-           'resources/scripts/index.js',
-           'resources/scripts/question.js',
            ])
 
 </head>
@@ -37,7 +32,16 @@
              <p class="for-professionals">For Professionals</p>
              <p class="about-us">About Us</p>
              <p class="pricing">Pricing</p>
-             <button class="primary btn-md js-navigate-to-login" >Get Started</button>
+             @guest
+             <a href="/login" class="primary btn-md js-navigate-to-login" >Get Started</a>
+             @endguest
+             @auth
+             <form action="/logout" method="POST">
+                @csrf
+                @method('DELETE')
+                 <button class="primary btn-md outlined" >Log out</button>
+             </form>
+             @endauth
          </div> 
          </div>
         <div class="nav-bar-md">

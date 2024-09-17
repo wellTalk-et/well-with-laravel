@@ -95,7 +95,7 @@
   margin:0;
 }
 button{
-cursor: pointer;;
+cursor: pointer;
 }
 
 
@@ -110,9 +110,13 @@ p{
 }
 
 
+.primary{
+  background-color: var(--primary-700);
+  text-decoration: none;
 
-.primary.btn-md{
-background-color: var(--primary-700);
+}
+
+.btn-md{
 padding: 8px;
 font-weight: var(--medium-500);
 font-size: 14px;
@@ -120,3 +124,17 @@ border: none;
 border-radius: 6px;
 color: var(--light-bg);
 }
+
+.outlined{
+  background-color: transparent;
+  border: 1px solid var(--primary-700);
+  color: var(--primary-900);
+  padding-inline: 12px;
+  transition: all .15s;
+}
+
+.outlined:hover{
+  background-color: var(--primary-700); 
+  color: var(--light-bg);
+}
+

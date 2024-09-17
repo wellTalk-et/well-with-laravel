@@ -17,4 +17,8 @@ class Question extends Model
     public function options(){
         return $this->belongsToMany(Option::class);
     }
+
+    public function responses(){
+        return $this->hasMany(Response::class);
+    }
 }

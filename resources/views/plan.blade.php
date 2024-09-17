@@ -1,27 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WellTalk-Tab</title>
-    <link rel="stylesheet" href="static/styles/payment.css">
-</head>
-<body>
-
+<x-layout>
+    @vite([
+        'resources/styles/payment.css'
+        ])
     <section id="part-four">
         <div class="container-4" ><!--main div-->
             <div class="card-progress-bar"><!--progress bar-->
-                <div class="progress-partFour-1" >
+                <div class="progress-partFour-1"></div>
 
-                </div>
+                <div class="progress-partFour-2"></div>
 
-                <div class="progress-partFour-2">
-
-                </div>
-
-                <div class="progress-partFour-3">
-
-                </div>
+                <div class="progress-partFour-3"></div>
             </div>
 
             <div class="plan-title-txt"><!--title txt-->
@@ -63,5 +51,4 @@
             </div>
     </section>
 
-    
-</body>
+</x-layout>

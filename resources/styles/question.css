@@ -97,8 +97,8 @@ body{
 .progress-bar{
     position: absolute;
     top: 0;
-    margin-top: 50px;
-    height: 5px;
+    margin-top:67px;
+    height: 3px;
     width: 0px;
     border-radius: 10px;
     background-color: var(--primary-800);
@@ -107,10 +107,10 @@ body{
 
 main{
     display: flex; 
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
     justify-content: center; 
-    margin-top: -10px;
+    margin-top: -16px;
     padding-top: 140px;
     margin-inline: 20px;
     gap: 16px;
@@ -132,7 +132,16 @@ main{
     gap: 20px;
     width: 340px;
     transition: all .2s ease;
+}
 
+.question-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.question-form .hidden-input{
+    display: none;
 }
 
 .slide-in{

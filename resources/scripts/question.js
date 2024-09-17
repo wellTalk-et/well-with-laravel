@@ -1,60 +1,88 @@
-// const questions = [
-//     {
-//         question:`
-//             <p class="question">
-//                 I'm looking for a provider that will provide...
-//             </p>
-//             <select type="dropdown" name="country" class="input dropdown" id="js-country" title="Country has to be provided" required autocomplete="country">
-//                 <option value="anxiety-therapy">anxiety therapy</option>
-//                 <option value="family-therapy">family therapy</option>
-//             </select>
+const formElem = document.querySelector('.js-question-form');
+formElem.addEventListener('submit', (event)=>{
+    event.preventDefault();
+});
 
-//             <button class="btn primary btn-md">Continue</button>
-//     `,
-//     answer: null
-//     },
-//     {
-//         question: `
-//             <p class="question">
-//                 Have you and your partner worked with a couples counselor before?
-//             </p>
-           
-//            <div class="choice">
-//                <button class="btn btn-outlined yes" role="radio">Yes</button>
-//                <button class="btn btn-outlined no" role="radio">No</button>
-//            </div>
+function sendRequest(){
+    let answersInput = document.querySelector('input[name="answers"]');
+    answersInput.value = sessionStorage.getItem('answers');
+    
+    formElem.submit();
 
-//     `,
-//     answer: null
-//     }, 
-//    {
-//     question:  `
-//     <p class="question">
-//         I'm looking for a provider that will provide...
-//     </p>
-//     <select type="dropdown" name="country" class="input dropdown" id="js-country" title="Country has to be provided" required autocomplete="country">
-//         <option value="anxiety-therapy">anxiety therapy</option>
-//         <option value="usa">family therapy</option>
-//     </select>
+}
 
-//     <button class="btn primary btn-md">Continue</button>
-// `,
-// answer: null
-// }
-// ]
-// const questions = [];
+
+
+function constructQuestions(question){
+    let newQuestion, optionHtml;
+    if(question.type == 'select'){
+        optionHtml = question.options.map(option =>{
+            return `<option value="${option.text}" data-id="${option.id}">${option.text}</option>`
+        }).join('');
+
+       newQuestion = {
+            id : question.id,
+            type : question.type,
+            question:`
+                <p class="question" data-question-text="${question.text} data-question-id="${question.id}>
+                    ${question.text}
+                </p>
+            
+                <select type="dropdown" name="question-${question.id}" class="input dropdown" id="js-${question.id}">
+                        ${ optionHtml }
+                </select>
+                <button class="btn primary btn-md">Continue</button>
+            `,
+            answer: null
+        }
+
+    }else if(question.type == 'yes_no'){
+       optionHtml = question.options.map(option => {
+            return `<button class="btn btn-outlined ${option.text}" role="radio" value="${option.text}" data-id="${option.id}">${option.text}</button>`
+        }).join('');
+        newQuestion = {
+            id : question.id,
+            type : question.type,
+            question: `
+                <p class="question" data-question-text="${question.text} data-question-id="${question.id}>
+                    ${question.text}
+                </p>
+                
+                <div class="choice" name="question-${question.id}" class="input dropdown" id="js-${question.id}">
+                ${optionHtml}
+                </div>
+    
+            `,
+            answer: null
+        }
+
+    }
+
+    return newQuestion;
+}
 
 const questions = []
 const questionDataDiv = document.getElementById('question-data');
-const questionsJson = questionDataDiv.dataset.questions;
-const questionsObj = JSON.parse(questionsJson);
+const questionsObj = JSON.parse(questionDataDiv.dataset.questions);
+questionsObj.forEach(question =>{
+        questions.push(constructQuestions(question));
+
+});
+
 
 let questionIndex = 0, currentQuestion;
 const questionContainer = document.querySelector('.js-question-container');
 const backBtn = document.querySelector('.back-btn');
 const progressBar = document.querySelector('.js-progress-bar');
 
+function addToSessionStorage(currQuestion){
+    const answers = JSON.parse(sessionStorage.getItem('answers')) || {};
+    answers[currQuestion.id] = currQuestion.answer;
+    sessionStorage.setItem('answers', JSON.stringify(answers));
+}
+
 function renderQuestion(index){
+    console.log(index);
     currentQuestion = questions[index]
     if(questionIndex === 0){
         backBtn.classList.add('disabled');
@@ -62,26 +90,26 @@ function renderQuestion(index){
     }else{
         backBtn.classList.remove('disabled');
         backBtn.removeAttribute('disabled', '')
-
     }
     questionContainer.innerHTML = currentQuestion.question;
     document.querySelectorAll('.js-question-container .btn').forEach(btn =>{
         btn.addEventListener('click', ()=>{
             const selectElem = document.querySelector('select');
-            if(selectElem){ // if the quesion is select based get the input value
+            if(selectElem) // if the quesion is select based get the input value
                 currentQuestion.answer = selectElem.value
-                // console.log(currentQuestion.answer)
-            }else{
+            else // if the value is yes_no
                 currentQuestion.answer = btn.textContent
-                // console.log(currentQuestion.answer)
-            }
+            
+            // save to session storage
+            addToSessionStorage(currentQuestion);
+
             if (index < questions.length - 1) {
                 changeQuestion();
             } else {
                 progressBar.style.width = `100%`;
                 setTimeout(() => {
-                    window.location.href = 'plan.html'
                 }, 600)
+                sendRequest();
             }
         })
     })
@@ -119,6 +147,7 @@ function previousQuestion(){
 function updateProgressBar() {
     progressBar.style.width = `${(questionIndex / questions.length) * 100}%`;
 }
+
 
 backBtn.addEventListener('click', () => {
     questionContainer.classList.remove('slide-in')

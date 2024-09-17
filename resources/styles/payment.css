@@ -339,14 +339,12 @@ input, select{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 85vh; */
    
     margin-bottom: 100px;
 }
 .container-4{
      background-color: transparent ;
      width:380px;
-     /* height: 410px; */
 }
 
 .card-progress-bar{
@@ -355,27 +353,14 @@ input, select{
     display: flex;
     margin-bottom: 20px;
 }
-.progress-partFour-1{
+.card-progress-bar > *{
     width: 120px;
-    height: 6px;
+    height: 4px;
     border-radius: 10px;
-    background-color:#0E7F72;
+    background-color:var(--primary-800);
     margin-right: 10px;
 }
-.progress-partFour-2{
-    width: 120px;
-    height: 6px;
-    border-radius: 10px;
-    background-color: #D9D9D9;
-    margin-right: 10px;
-}
-.progress-partFour-3{
-    width: 120px;
-    height: 6px;
-    border-radius: 10px;
-    background-color: #D9D9D9;
-    margin-right: 10px;
-}
+
 .plan-title-txt > p{
     width: 400px;
     font-size: 20px;

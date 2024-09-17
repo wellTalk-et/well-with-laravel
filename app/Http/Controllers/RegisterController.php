@@ -23,24 +23,29 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        // validate
-     $attribute = $request->validate([
-        'first_name' => ['required'],
-        'last_name' => ['required'],
-        'email' => ['required', 'email', 'max:254', 'unique:users,email' ],
-        'password' => ['required', Password::min(6)],
-        "country" => ['required'],
-      ]);
-        
-      if(!$request['checkbox']){
-        throw ValidationException::withMessages(['checkbox' => 'you must agree for our terms and agreements']);
-    }
-    $user = User::create($attribute);
-        // login
 
-    Auth::login($user);
-        //redirect
-    redirect('/questions?q=1');
+        // validate
+        $attribute = $request->validate([
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'email' => ['required', 'email', 'max:254', 'unique:users,email' ],
+            'password' => ['required', Password::min(8)],
+            "country" => ['required'],
+        ]);
+            
+        if(!$request['checkbox']){
+            throw ValidationException::withMessages(['checkbox' => 'you must agree for our terms and agreements']);
+        }
+        $user = User::create($attribute);
+
+        if($request['role'] == 'mentor'){
+            $user->doctor()->create();
+        }else{
+            $user->client()->create();
+        }
+
+        Auth::login($user);
+        return redirect('/questions');
     }
 
 }

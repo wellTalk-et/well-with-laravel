@@ -5,14 +5,16 @@
 
         <div class="right-side-sm">
             <img src="./static/assets/users/provider-vc-christina.png" class="right-side-img-sm" alt="doctor sitting on the couch" >
-            <button class="btn outlined sm border-white js-navigate-to-login">Get started</button>
+            <a href="{{ Auth::user() ? '/questions' : '/login' }}"
+            class="primary btn-xl js-navigate-to-login">Get Started</a>
         </div>
 
         <div class="left-side container">
             <h1 class="heading">Talk to Professionals, Anytime, Anywhere </h1>
             <p class="description">WellTalk online service Providing instant access to mentorship, medical consultations, and personalized support just made for you</p>
            <div class="getting-started-container">
-            <button class="primary btn-xl js-navigate-to-login">Get Started</button>
+            <a href="{{ Auth::user() ? '/questions' : '/login' }}"
+             class="primary btn-xl js-navigate-to-login">Get Started</a>
             <p>Secure SSL</p>
            </div>
         </div> <!-- end left side-->
@@ -410,4 +412,10 @@
                 <p class="current-year js-current-year"></p>
             </div>
         </footer>
+
+        @vite([
+            'resources/scripts/index.js',
+
+            'resources/styles/index.css',
+            ])
     </x-layout>

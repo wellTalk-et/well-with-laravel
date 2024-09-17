@@ -2,10 +2,6 @@ import './navbar.js'
 import { checkPasswordStrength } from './utilities/passwordStrength.js';
 
 
-// external links cant be loaded
-// import { passwordStrength } from './../../../node_modules/check-password-strength/dist/index.js'
-// console.log(passwordStrength('asdfasdf').value)
-
 // animate either mentor or mentee selected
 function animateAccountType(){
     const overlayElem = document.querySelector('.js-overlay');
@@ -20,15 +16,6 @@ function animateAccountType(){
     overlayElem.classList.add('mentee-selected');
 })
 }
-
-// custom validation for registration page
-// document.getElementById('js-register-form').addEventListener('submit',(event)=>{
-//     event.preventDefault();
-//     const isValid = handleRegister();
-//     if(isValid)
-//         window.location.href = 'question.html'
-
-// })
 
 function handleRegister(){
     const firstName = document.getElementById('js-fname').value.trim();
