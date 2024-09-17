@@ -2,45 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Plan;
 use Illuminate\Http\Request;
 
-class PaymentController extends Controller
+class VideoSessionController extends Controller
 {
-
-    
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        //
+        return view('video');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Plan $plan)
+    public function create()
     {
-
-        return view('payment', ['plan'=> $plan]);
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store( Plan $plan)
+    public function store(Request $request)
     {
         //
-        // dd($plan);
-        // validate the request
-        // the route must have the middleware to auth
-        // create the plan for the user
-        // attach that plan for the user
-        // create the first consultation for the user
-        // send that via email with queue
-        // show the confirmation message
-        // return redirect to the video session 
-        return redirect('/plan/session');
     }
 
     /**

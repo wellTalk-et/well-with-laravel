@@ -13,7 +13,8 @@
                 <p>You will not be charged until you've been matched with a provider. Switch plans or cancel anytime after subscribing.</p>
             </div>
 
-            <form class="form-step" method="POST">
+            <form class="form-step" method="POST" action="/plan/{{$plan->id}}/payment">
+                @csrf
                 <label for="email"><p class="label-title">Email</p></label>
                 <input type="email" id="email" class="email-input">
 
@@ -33,9 +34,8 @@
                     <option value="Ethiopia">Ethiopia</option>
                 </select>
 
-                <button class="pay-pal-btn">Pay with payPal</button>
+                <button class="pay-pal-btn" type="submit">Pay with payPal</button>
                 <p class="secure-ssl-txt">This is secure SSL. All payments are secured by SSL</p>
-
             </form>
 
 
