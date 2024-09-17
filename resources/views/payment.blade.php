@@ -1,34 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WellTalk-Tab</title>
-    <link rel="stylesheet" href="static/styles/payment.css">
-</head>
-<body>
+<x-layout>
+    @vite(['resources/styles/payment.css'])
     <section id="part-six">
         <div class="container-6" ><!--main div-->
-            <div class="card-progress-bar" style="width: 330px;"><!--progress bar-->
-                <div class="progress-partSix-1">
+        <x-plan.progress-bar class="card-progress-bar" /><!--progress bar-->
 
-                </div>
-
-                <div class="progress-partSix-2">
-
-                </div>
-
-                <div class="progress-partSix-3">
-
-                </div>
-            </div>
 
             <div class="plan-title-partSix-txt"><!--title txt-->
                 <p>You are just one step away</p>
             </div>
 
             <div class="plan-description-partSix-txt"><!--description-->
-                <p>You will not be charged until you’ve been matched with a provider. Switch plans or cancel anytime after subscribing.</p>
+                <p>You will not be charged until you've been matched with a provider. Switch plans or cancel anytime after subscribing.</p>
             </div>
 
             <form class="form-step" method="POST">
@@ -58,5 +40,4 @@
 
 
     </section>
-    
-</body>
+</x-layout>

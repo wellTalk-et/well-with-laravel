@@ -16,8 +16,13 @@ class Client extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+    public function plans(){
+        return $this->belongsToMany(Plan::class);
+    }
 
-
+    public function consultations(){
+        return $this->hasMany(Consultation::class);
+    }
 
 
 }

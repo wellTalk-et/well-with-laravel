@@ -18,11 +18,11 @@ class DoctorSeeder extends Seeder
         $user = User::factory()->create([
             'first_name' => 'abel',
             'last_name' => 'asmare',
-            'username' => 'abel_abel',
-            'email' => 'abey0102@gmail.com',
+            'username' => env('DOCTOR_DEFAULT_USERNAME'), // change this 
+            'email' => env('DOCTOR_DEFAULT_EMAIL'), // change this
+            'password' => Hash::make(env('DOCTOR_DEFAULT_PASSWORD')), // also change this
             'email_verified_at' => now(),
             'country' => 'Ethiopia', 
-            'password' => Hash::make('Abey@1234'),
             'remember_token' => Str::random(10),
         ]);
         $user->Doctor()->create([]);

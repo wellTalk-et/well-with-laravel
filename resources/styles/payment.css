@@ -99,6 +99,10 @@ input, select{
     background: none;;
 }
 
+sup{
+    font-weight: 400;
+}
+
 /*Some CSS property are common to all element*/
 /*Part One*/
 /* payment.css */
@@ -189,7 +193,6 @@ input, select{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 45vh; */
     
 }
 
@@ -357,8 +360,16 @@ input, select{
     width: 120px;
     height: 4px;
     border-radius: 10px;
-    background-color:var(--primary-800);
     margin-right: 10px;
+    background-color:var(--neutral-400);
+}
+
+.card-progress-bar > .active{
+    background-color:var(--primary-800);
+}
+
+.hidden-radio{
+    display:none;
 }
 
 .plan-title-txt > p{
@@ -381,6 +392,7 @@ input, select{
 
 }
 
+
 .part-four-div{
     width:380px; 
     height: 130px;
@@ -389,6 +401,9 @@ input, select{
     margin-top: 10px;
     margin-bottom: 10px;
     cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: var(--black-900);
 }
 .part-four-price-div{
     padding-top: 10px;
@@ -516,14 +531,20 @@ input, select{
     display: inline-block;
 }
 .part-five-summary-title-txt{
+    display: flex;
+    justify-content: space-evenly;
+    margin-inline: 4px;
     font-size: 14px; 
     font-weight: 400; 
     line-height: 40px; 
-    padding-left: 10px; 
 }
-.part-five-summary-title-txt > span{
-    margin-left: 148px;
+
+.part-five-summary-title-txt > :first-child,
+.part-five-summary-total-txt > :first-child
+{
+    flex: .90;
 }
+
 .part-five-div-2 > hr {
     width: 350px; 
     color: #777777; 
@@ -532,16 +553,14 @@ input, select{
     line-height: 15px;
 }
 .part-five-summary-total-txt{
+    display: flex;
+    justify-content: space-evenly;
+    margin-inline: 4px;
     padding-top: 15px;  
-    padding-left: 10px; 
     font-size: 15px;
     width: 330px; 
-    display: inline-block; 
     font-weight: 600;
     width: 100%;
-}
-.part-five-summary-total-txt > span{
-    margin-left: 248px;
 }
 .part-five-summary-desc-txt{
     width: 250px; 

@@ -2,12 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Appointment;
-use App\Models\Client;
-use App\Models\Doctor;
-use App\Models\Question;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -25,6 +20,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
+        $this->call(ClientSeeder::class);
+        $this->call(DoctorSeeder::class);
         $this->call(AppointmentSeeder::class);
         $this->call(QuestionSeeder::class);
         $this->call(PlanSeeder::class);

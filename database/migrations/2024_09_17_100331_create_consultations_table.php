@@ -1,8 +1,8 @@
 <?php
 
 use App\Models\Client;
+use App\Models\Doctor;
 use App\Models\Plan;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,10 +14,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('client_plan', function (Blueprint $table) {
+        Schema::create('consultations', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Client::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Doctor::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Plan::class)->constrained()->cascadeOnDelete();
+            $table->string('title');
+            $table->text('note')->nullable();
+            $table->timestamp('start_time');
+            $table->timestamp('end_time');
             $table->timestamps();
         });
     }
@@ -27,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('client_plan');
+        Schema::dropIfExists('consultations');
     }
 };

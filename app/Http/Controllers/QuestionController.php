@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Question;
 use Illuminate\Http\Request;
+use App\Models\Option;
+use App\Models\Question;
+use Illuminate\Support\Facades\Auth;
+
 
 class QuestionController extends Controller
 {
@@ -29,5 +32,19 @@ class QuestionController extends Controller
                 ];
             });
             return view('question', ['questions' => $questions]);
+    }
+
+    public function store(Request $request){
+        $answers = json_decode($request['answers'], true);
+        foreach($answers as $questionId => $answer){
+            $question = Question::find($questionId);
+            $option = Option::where('text', $answer)->first();
+            $question->responses()->create([
+                'option_id' => $option->id,
+                'client_id' => Auth::user()->client->id
+            ]);
+        }
+
+        return redirect('/plan');
     }
 }

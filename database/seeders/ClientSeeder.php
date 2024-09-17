@@ -19,13 +19,14 @@ class ClientSeeder extends Seeder
         $user = User::factory()->create([
             'first_name' => 'abey',
             'last_name' => 'asmare',
-            'username' => 'abey_avi',
-            'email' => 'abeyasmare07@gmail.com',
+            'username' => env('CLIENT_DEFAULT_USERNAME'), // change this 
+            'email' => env('CLIENT_DEFAULT_EMAIL'), // change this
+            'password' => Hash::make(env('CLIENT_DEFAULT_PASSWORD')), // also change this
             'email_verified_at' => now(),
             'country' => 'Ethiopia', 
-            'password' => Hash::make('Abey@1234'),
             'remember_token' => Str::random(10),
         ]);
-        $user->client()->create();
+        $client = $user->client()->create();
+
     }
 }
