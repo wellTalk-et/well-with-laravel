@@ -1,8 +1,8 @@
 import AgoraRTC from "agora-rtc-sdk-ng";
 
-const APP_ID = "4084dd82c82d463a869af0a56383e0c5"
-const TOKEN = '007eJxTYPgRX8DySr+049lRs7/rTsp9CFm76dpR9b69+89dZC8XO6umwGBiYGGSkmJhlGxhlGJiZpxoYWaZmGaQaGpmbGGcapBsetThbVpDICPD/LSPDIxQCOKzMJSn5uQwMAAAFTwiPg=='
-const CHANNEL = 'well';
+const APP_ID = env(AGORA_APP_ID);
+const TOKEN = env(AGORA_TOKEN)
+const CHANNEL = env(AGORA_CHANNEL);
 
 
 const localTracks = {
