@@ -49,47 +49,29 @@
   <main>
       <div class="content">
             <div class="video-session-lg">
-                    <div class="img-lg-container">
-                        <div class="user">
-                            <div class="user-name-start">A</div>
-                            <p>You</p>
-                        </div>
-                        
-                        <div class="recording">
-                            <x-image path="resources/assets/icons/recording-transparent.svg" class="record-icon-transparent" alt="record-icon" />
-                            <p>Recording in progress</p>
-                            <div class="icon-container">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z" />
-                                  </svg>
-                            </div>
-                            <div class="icon-container">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-                                  </svg>
-                                  
-                            </div>
-                        </div>
-                        <x-image path="resources/assets/users/provider-vc-christina.png" alt="video call large image" class="lg-img" />
-                 
-                        <div class="user-controls">
+                   <!-- large vide inserted -->
+
+                   <!-- user controls  -->
+                <div class="user-controls">
                             <div class="top">
-                                <div class="icon-container">
+                                <div class="icon-container active" id="mic-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
                                       </svg>
                                 </div>
-                                <div class="icon-container"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <div class="icon-container active" id="camera-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
-                                  </svg>
-                                  </div>
-                                <div class="icon-container">
+                                    </svg>
+                                </div>
+                                <div class="icon-container" id="record-btn">
                                     <x-image path="resources/assets/icons/record-icon.svg" alt="record icon" />
                                 </div>
-                                <div class="icon-container">
+                                <div class="icon-container" id="leave-btn">
                                     <x-image path="resources/assets/icons/phone-icon.svg" alt="hang up" />
                                 </div>
                             </div>
+
                             <div class="bottom">
                                 <div class="vc-figure">
                                     <x-image path="resources/assets/icons/voice-figure.svg" alt="voice figure" class="voice-figure" />
@@ -109,60 +91,17 @@
 
                             </div>
                         </div>
-
-                    </div>
             </div>
             <div class="video-session-sm">
-                <div class="sm-card">
-                    <div class="sm-image-container">
-                        <x-image path="resources/assets/users/provider-vc-christina.png" alt="session card image" />
-
-                    <div class="icon-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
-                          </svg>
-                    </div>
-                    <div class="name">Jenna Doe</div>
-                </div>
-
-            </div>
-            <div class="sm-card">
-
-                <div class="sm-image-container">
-                    <x-image path="resources/assets/users/provider-vc-christina.png" alt="session card image" class="user-image-enabled" />
-
-                    <div class="user-profile-camera-disabled">
-                        <x-image path="resources/assets/users/microsoft-avatar.png" alt="session card image" /> 
-                    </div>
-                    
-                    <div class="icon-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
-                        </svg>
-                    </div>
-                    <div class="name">Jenna Doe</div>
-                </div>
-
-            </div>    
-             <div class="sm-card">
-            <div class="sm-image-container">
-                <x-image path="resources/assets/users/provider-vc-christina.png" alt="session card image" />
-
-            <div class="icon-container">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
-                  </svg>
-            </div>
-            <div class="name">Jenna Doe</div>
-        </div>
-
-             </div>
+                @if (false)
              <div class="more-button">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="chevron-down size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                   </svg>
                   
              </div>
+             @endif
+
             </div>
         <div class="content-right chat">
             <div class="content-header">
@@ -272,9 +211,11 @@
 
         </div>
     </div>
+
+    <div class="messages" id='messages' style="display:block"></div>
   </main>
 
 
-    
+    @vite(['resources/scripts/agora_rtc.js'])
 </body>
 </html>
