@@ -17,5 +17,4 @@ class Plan extends Model
     public function consultations(){
         return $this->hasMany(Consultation::class);
     }
-
 }

@@ -39,6 +39,7 @@ class QuestionController extends Controller
         foreach($answers as $questionId => $answer){
             $question = Question::find($questionId);
             $option = Option::where('text', $answer)->first();
+            Auth::user()->status = true;
             $question->responses()->create([
                 'option_id' => $option->id,
                 'client_id' => Auth::user()->client->id

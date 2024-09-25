@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Client;
+use App\Models\Consultation;
+use App\Models\Doctor;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VideoSessionController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Consultation $consultation)
     {
-        //
-        return view('session');
+        return view('session', ['consultation'=> $consultation]);
     }
 
     /**

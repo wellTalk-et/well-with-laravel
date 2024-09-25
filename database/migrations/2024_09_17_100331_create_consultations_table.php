@@ -21,8 +21,8 @@ return new class extends Migration
             $table->foreignIdFor(Plan::class)->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->text('note')->nullable();
-            $table->timestamp('start_time');
-            $table->timestamp('end_time');
+            $table->timestamp('start_time')->default(now());
+            $table->timestamp('end_time')->nullable();
             $table->timestamps();
         });
     }

@@ -1,9 +1,9 @@
 import AgoraRTC from "agora-rtc-sdk-ng";
-
+import { sendUserLeftMessage } from "./manageuser";
 // token is expired
 
 const APP_ID = "4084dd82c82d463a869af0a56383e0c5"
-const TOKEN = '007eJxTYJjXpyaTtuvlU+EdDT66QqpefNo88/MviH97n8hiKxDDuVeBwcTAwiQlxcIo2cIoxcTMONHCzDIxzSDR1MzYwjjVINlURfBzWkMgI8OXFHsmRgYIBPFZGMpTc3IYGABAyBvC'
+const TOKEN = '007eJxTYGh5YNR75UNt9vZJ9+UfLwv6PqVa/P3zavUqsX5/bSMZtU0KDCYGFiYpKRZGyRZGKSZmxokWZpaJaQaJpmbGFsapBsmmrMlf0hoCGRneWMuyMjJAIIjPwlCempPDwAAAh14fVw=='
 const CHANNEL = 'well';
 
 
@@ -15,14 +15,9 @@ const remoteUsers = {}
 let client;
 
 
-let uid = sessionStorage.getItem('uid');
-
-if(!uid){
-    uid = String(Math.floor(Math.random() * 10000));
-    sessionStorage.setItem('uid', uid);
-}
-
-
+console.log("user id");
+let uid = document.getElementById('data-user-id').dataset.userId;
+console.log(uid);
 
 let joinRoomInit = async ()=>{
     client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'});
@@ -152,10 +147,22 @@ let leaveStream = async (e) => {
     }
     // Remove the local user's video element
     document.getElementById(`user-${uid}`).remove();
+    sendUserLeftMessage(uid);
 
     // the current user doesn't wont handle the user left so we will have the event to tell him
-
 };
+
+manageRemoteUserLeft = (userLeftId)=>{
+    const highlightedElem = document.querySelector('.js-highlighted-user');
+    const videoSessionElem = document.querySelector('.js-video-sessions');
+    let clientElems = videoSessionElem.querySelectorAll('.client');
+    const highlightedElemOverlay = document.querySelector('.highlighted-user-overlay');
+
+    document.getElementById(`user-${userLeftId}`).remove();
+
+
+
+}
 
 
 

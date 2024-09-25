@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consultation;
+use App\Models\Doctor;
 use App\Models\Plan;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -35,12 +39,21 @@ class PaymentController extends Controller
         // validate the request
         // the route must have the middleware to auth
         // create the plan for the user
-        // attach that plan for the user
+        $client = Auth::user()->client;
+        $plan = Plan::first();
+        $client->plans()->attach($plan);
+        $consultation = Consultation::create([
+            'title'=> 'consultation for '. Auth::user()->username,
+            'plan_id' => $plan->id,
+            'doctor_id' => Doctor::first()->id,
+            'client_id'=> $client->id
+        ]);
+
         // create the first consultation for the user
         // send that via email with queue
         // show the confirmation message
         // return redirect to the video session 
-        return redirect('/plan/session');
+        return redirect('/session/'. $consultation->id);
     }
 
     /**

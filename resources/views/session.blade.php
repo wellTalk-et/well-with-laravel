@@ -6,6 +6,7 @@
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
             <title>Video call with Abel</title>
 
             @vite([
@@ -15,7 +16,8 @@
                 ])
 </head>
 <body class="video-page">
-  <header class="video-header">
+    <div data-user-id="{{Auth::user()->id}}" data-consultation-id="{{$consultation->id}}" id="data-user-id"></div>
+    <header class="video-header">
         <div class="left">
             <div class="back-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 chevron-left">
@@ -23,7 +25,7 @@
                 </svg>
             </div>
             <div class="heading">
-                <p class="heading-header">Meeting with Jhon and Jenna</p>
+                <p class="heading-header">Meeting with {{Auth::user()->username}}</p>
                 <p class="heading-text">Today you have 6 meetings planned</p>
             </div>
         </div>
@@ -231,9 +233,14 @@
             <div class="icon-container control">
                 <x-image path="resources/assets/icons/record-icon.svg" alt="record icon" />
             </div>
-            <div class="icon-container control" id="leave-btn">
-                <x-image path="resources/assets/icons/phone-icon.svg" alt="hang up" />
-            </div>
+            <form action="{{$consultation->id}}/user-left" method="POST" class="form-elem">
+                @csrf
+                <button style="border: none; background-color: transparent;" type="submit" id="leave-btn">
+                <div class="icon-container control">
+                    <x-image path="resources/assets/icons/phone-icon.svg" alt="hang up" />
+                </div>
+            </button>
+            </form>
         </div>
         <div class="bottom">
             <div class="vc-figure">
@@ -358,6 +365,7 @@
     </script>
 
 @vite([
+        'resources/js/app.js',
         'resources/scripts/utilities/videochat.js',
     ])
 </body>
