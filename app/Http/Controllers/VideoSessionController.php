@@ -12,7 +12,7 @@ class VideoSessionController extends Controller
     public function index()
     {
         //
-        return view('video');
+        return view('session');
     }
 
     /**

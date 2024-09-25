@@ -216,6 +216,10 @@
   </main>
 
 
-    @vite(['resources/scripts/agora_rtc.js'])
+    @vite([
+        'resources/scripts/agora-rtm-sdk-1.4.4.js',
+        'resources/scripts/agora_rtc.js',
+        'resources/scripts/agora-rtm.js',
+    ])
 </body>
 </html>

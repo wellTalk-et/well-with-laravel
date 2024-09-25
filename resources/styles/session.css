@@ -107,30 +107,6 @@ header.video-header{
     margin-right: auto;
 }
 
-div.content{
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 10rem 1fr;
-    grid-template-rows: 1fr 230px;
-    grid-template-areas: 
-    'lg-video lg-video sm-video chat'
-    'up-next  notes    notes    chat';
-    gap: 20px;
-}
-div.content .video-session-lg{
-    grid-area: lg-video;
-}
-div.content .video-session-sm{
-    grid-area: sm-video;
-}
-div.content .content-right.chat{
-    grid-area: chat;
-}
-
-div.content .notes{
-    grid-area: notes;
-}
-
 header.video-header{
     display:flex;
     justify-content: space-between;
@@ -247,188 +223,222 @@ header.video-header{
 
 /* end header */
 
-/* start main content*/
-main{
-    margin-top: 20px;
+/* utilities */
+.block{
+    display:block;
 }
-.video-session-lg{
-        height: 400px;
-        background-color: gray;
+.none{
+    display:none
 }
-
-.video-session-lg > .img-lg-container{
-    height: 100%;
-    position: relative;
+.grid{
+    display:grid
 }
-.video-session-lg .lg-img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 24px;
+.flex{
+    display:flex
+}
+.align-center{
+    align-items: center;
 }
 
-.video-session-sm{
-    display: flex;
+.justify-center{
+    justify-content: center;
+}
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+.justify-evenly{
+    justify-content: space-evenly;
+}
+.flex-column{
     flex-direction: column;
-    gap:16px;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+/* end utilities */
+/* main */
+main{
+ display: flex;
+ gap: 16px;
+ margin-top: 100px;
 }
 
-.sm-card .user-profile-camera-disabled {
-    width: 48px;
-    height: 48px;
+
+.left-section,
+.right-section{
+    border: 2px solid black;
+}
+.left-section{
+    flex: 1;
+    gap: 16px;
+    display:flex;
+    flex-direction: column;
+    /* display:grid;
+    grid-template-rows: 1fr 206px;
+    place-content: center; */
+}
+
+.video-sessions{
+    align-self: center;
+    justify-self: center;
+    gap: 16px;
+    max-width: 800px;
+    border: 1px solid black;
+}
+
+
+.client{
+    border-radius: 8px;
+    cursor: pointer;
+    width: 360px;
+    height: 210px;
+    overflow: hidden;
+}
+
+/* .video-sessions.maximized .client{
+    width: 390px;
+    height: 236px;
+} */
+.video-sessions.minimized .client{
+    width: 120px;
+    height: 70px;
+}
+.highlighted-user-overlay{
     position: absolute;
-    inset:0;
-    margin:auto;
-}
-
-.video-session-sm .more-button{
+    /* inset: 0; */
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40px;
+    right: 40px;    
+    min-height: 800px;
+    z-index: 1001;
+    border: 1px solid green;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #181818;
-    border-radius: 10px;
-    padding:8px;
+    display:none
 }
-.more-button .chevron-down{
-    width: 24px;
-    height: 24px;
-    color: white
+.highlighted-user-overlay.none > *{
+    display: none;
 }
-
-.sm-image-container .user-image-enabled{
-    filter: blur(1.4px);
-    -webkit-filter: blur(1.4px);
-
+.highlighted-user-overlay > *{
+    border: 1px solid black;
 }
-.sm-image-container :first-child{
-    width: 100%;
-    height: 100%;
-
+.highlighted-user-overlay *{
+    background-color: transparent !important;    
 }
-
-.user-profile-camera-disabled img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    
+.highlighted-user-overlay .chats{
+    max-height: 300px;
+    max-width: 500px;
+    -ms-overflow-style: none;  /* IE */
+    scrollbar-width: none;
+    margin-bottom: 10px;
 }
-.video-session-sm .sm-image-container{
-    /* width: 188px; */
-    height: 104px;
-
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-.sm-image-container video{
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
+.highlighted-user-overlay .message-container{
+    overflow-y:scroll;
+    background-color: rgba(0, 0, 0, .24) !important;
 }
 
-.sm-image-container img{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 10px;
+/* miniized user */
+.minimized-users{
+    border: 1px solid black;
+    width: 360px;
+    min-height: 300px; /* delete later*/
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.sm-image-container .icon-container, 
-.sm-image-container .name{
-    position: absolute;
+.minimized-users .client.client{
+    height: 180px;
+    width: 170px;
+}
+.minimized-users .video-sessions{
+align-self: stretch;
+}
+/* end miniized user */
+.message-container::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Edge */
 }
 
-.sm-image-container .icon-container.active{
-    background-color: rgba(255, 255, 255, .20);
+.highlighted-user-overlay .message-input{
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .24) !important;
+    border-radius: 30px;
 }
-
-
-.sm-image-container .name{
-    background-color: rgba(0, 0, 0, .3);
-    width: 14ch;
+.highlighted-user-overlay .send-btn{
     padding: 6px;
+    margin: 6px;
+    border-radius: 30px;
     color: white;
-    border-radius: 20px;
-    bottom:8px;
-    left:0;
-    right:0;
-    margin:auto;
-    text-align: center;
-    font-size: var(--text-14);
-    font-weight: 300;
-}
-
-.sm-card .icon-container{
-    top:8px;
-    right: 8px;
-    width: 24px;
-    height: 24px;
-    background-color: rgba(0, 0, 0, .3);
-    border-radius: 20px;
-    padding: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(255, 255, 255, .20) !important;
     cursor: pointer;
 }
+.highlighted-user-overlay .chat-section{
+    position: relative;
+}
+.highlighted-user-overlay .chat-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to bottom,#c6c6c681, transparent);
+    z-index: 1; /* Ensure it sits on top of the messages */
+    pointer-events: none; /* Allow clicks to go through */
+}
 
+.highlighted-user{
+    min-height: 460px;
+    border: 1px solid black;
+    background-color: var(--neutral-10);
+    overflow: hidden;
+}
+.highlighted-user > .client{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
 
+.highlighted-user.full-screen{
+    position: absolute;
+    inset: 0;
+    z-index: 1000;
+    height: 100vh;
+    min-height: 800px;
+}
+.body-height{
+    overflow: hidden;
+}
 
+/* user controls */
 
 .img-lg-container > .user,
 .img-lg-container > .recording,
 .user-controls .icon-container,
 .video-session-sm .icon-container,
-.video-session-sm .name,
-.img-lg-container .user-controls .bottom
+.user-controls .bottom
 {
       /* background blur */
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(16px);
 }
 
+.user-controls .control.active{
+    background-color: #4f4f4ff0;
+}
 
-.img-lg-container > .user{
+.recording{
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 6px;
-    border-radius: 30px;
-    background-color: rgba(0, 0, 0, .3);
-    position: absolute;
-    top:8px;
-    left: 8px;
-    height: 44px;
-    font-weight: 300;
-
-}
-
-.user > div.user-name-start{
-    font-weight: 600;
-    background-color: var(--light-bg);
-    color:var(--black);
-    border-radius: 20px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.user > p{
-    color: var(--white);
-    margin-right: 8px;
-}
-
-.img-lg-container > .recording{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: #212020F0;
     color: white;
     border-radius: 30px;
     padding: 6px;
@@ -438,7 +448,6 @@ main{
     height: 44px;
     font-weight: 300;
     flex-shrink: 2;
-      
 }
 
 .recording .icon-container,
@@ -452,7 +461,6 @@ main{
     align-items: center;
 }
 
-
 .icon-container  svg{
     color: var(--white);
 }
@@ -461,27 +469,17 @@ main{
     width: 24px;
     height: 24px;
 }
-.video-session-lg{
-    position: relative;
-    border-radius: 30px;
-    overflow: hidden;
-}
-
-
-
-.video-session-lg  video{
-    border-radius: 30px;
-}
 
 .user-controls{
-    position: absolute;
-    z-index: 20;
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
+    position: fixed;
+    z-index: 1001;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 700px;
 }
 
 .user-controls .icon-container > *{
@@ -497,21 +495,15 @@ main{
 }
 .user-controls .icon-container
 {
-    background-color: rgba(0, 0, 0, .3);
+    background-color: #212020F0;
+    opacity: .9;
     border-radius: 20px;
     padding: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     
 }
-
-.user-controls .icon-container.active{
-    background-color: rgba(255, 255, 255, .20);
-}
-
-
 
 .user-controls .top{
     display: flex;
@@ -528,7 +520,8 @@ main{
     padding: 8px;
     gap: 8px;
     border-radius: 20px;
-    background-color: rgba(0, 0, 0, .3);
+    /* background-color: rgba(0, 0, 0, .3); */
+    background-color: #212020F0;
     height: 68px;
     color: var(--white);
     box-shadow: var(--shadow-elevation-medium);
@@ -580,29 +573,65 @@ p.session.description .session-timer{
 .bottom .session-controls > *{
     padding: 6px;
     width: 34px;
+    border-radius: 14px;
+
+}
+.user-controls .control{
+    cursor: pointer;
+}
+/* end user controls */
+
+
+.right-section{
+    width: 396px;
+}
+/* left section */
+/* right section */
+
+
+.vc-bottom{
+    gap: 8px;
+    align-self: stretch;
+}
+.vc-bottom > *{
+    min-width: 300px;
+    flex:1;
+
+}
+.bottom .session-controls > *{
+    padding: 6px;
+    width: 34px;
     background-color:rgba(255, 255, 255, .20);
     border-radius: 14px;
 
 }
+.maximize-minimize-control .minimize{
+    display:none;
+}
 
-.content .next-meeting{
+ .maximize-minimize-control.minimize :first-child{
+     display: none;
+}
+.maximize-minimize-control.minimize :last-child{
+     display: block;
+ }
+
+
+
+.next-meeting{
     background-color: var(--white);
     border: 1px solid var(--neutral-300);
     border-radius: 24px;
     padding: 14px;
-    /* width: 300px; */
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     gap: 14px;
     padding-bottom:36px;
+    flex: .8;
 }
 
-.content .video-call-bottom{
-    display: flex;
-    gap: 16px;
-}
-
-.video-call-bottom .next-meeting p.up-next,
+ .next-meeting p.up-next,
 .next-meeting .members p.members-name,
 
 .next-meeting .sesison-type{
@@ -664,9 +693,9 @@ p.session.description .session-timer{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    /* width: 500px; */
-    /* set width to notes */
+    min-width: 400px;
 }
+
 .notes p{
     font-family: 'loto', sans-serif;
     font-weight: 600;
@@ -678,6 +707,11 @@ p.session.description .session-timer{
 
     border-bottom: 1px solid #A1A1A1;
 }
+
+
+
+/* chat section */
+
 
 /* chat section */
 .content-right{
@@ -708,7 +742,7 @@ p.session.description .session-timer{
     height: 40px;
     
 }
-.content-right .user-images img{
+.user-images img{
    width: 100%;
    height: 100%;
    border: 2px solid var(--light-bg);
@@ -751,21 +785,22 @@ p.session.description .session-timer{
     scroll-behavior: smooth;
     padding: 8px;
     background-color: #f9f9f9;
+    max-height: 554px;
 }
-.chat-container .single-chat:first-child{
+ .single-chat:first-child{
     margin-top: 12px;
 }
 
-.chat-container .single-chat{
+ .single-chat{
     display: flex;
     gap: 6px;
     width: 94%;
     margin:8px
 }
-.chat-container .single-chat .user-images{
+ .single-chat .user-images{
     margin: 0;
 }
-.chat-container .single-chat .message-container{
+ .single-chat .message-container{
     padding:6px 12px;
     font-size: 14px;
     font-family: 'lato', sans-serif;
@@ -844,266 +879,4 @@ p.session.description .session-timer{
     width: 20px;
     height: 20px;
     transform: rotate(-15deg);
-}
-
-
-@media (max-width: 1400px){
-            .video-header{
-                width: calc(1400px - 50px);
-                margin-inline:auto;
-            }
-                
-        .content{
-            grid-column: 2;
-        }
-}
-@media (max-width:  1300px){
-
-    body{
-        padding: 4px 24px;
-    }
-    header.video-header{
-        left: 24px;
-        right: 24px;
-        width: 96%;
-    }
-    .video-session-lg{
-        height: 450px;
-    }
-    .video-session-lg > .img-lg-container{
-
-        position: relative;
-    }
-    
-    div.content{
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: 450px 140px;
-        grid-template-areas: 
-        'lg-video chat'
-        'sm-video chat';
-        gap: 20px;
-    }
-    .video-session-sm{
-        display: flex;
-        flex-direction: row;
-        gap:16px;
-
-    }
-
-    .video-session-sm .sm-image-container,
-    .sm-image-container{
-        height: 140px;
-        width: 200px;
-    }
-    .more-button .chevron-down{
-        transform: rotate(-90deg);
-    }
-    .content .next-meeting,
-    .notes{
-        display:none;
-    }
-    div.content .video-session-lg{
-        grid-area: lg-video;
-    }
-    div.content .video-session-sm{
-        grid-area: sm-video;
-    }
-    div.content .content-right.chat{
-        grid-area: chat;
-    }
-    
-    div.content .notes{
-        grid-area: notes;
-    }
-
-}
-@media (max-width: 840px){
-    header.video-header{
-        width: 100%;
-    }
-    div.content{
-        margin-top:80px;
-        grid-template-columns: 1fr;
-        grid-template-rows: 400px;
-        grid-template-areas: 
-        'lg-video'
-        'sm-video';
-        gap: 20px;
-    }
-    div.chat{
-        display:none;
-    }
-    .video-session-lg{
-        height: 400px;
-    }
-    .img-lg-container > .recording{
-        width: fit-content;
-        font-size: 14px;
-          
-    }
-    .recording .record-icon-transparent,
-    .icon-container  *, 
-    .right > .notification
-    {
-        width: 16px;
-        height: 16px;
-        gap: 4px;
-    }
-    .user > div.user-name-start{
-        padding: 8px;
-    }
-
-    .right > .notification {
-        width: 40px;
-        height: 40px;
-    }
-    .right{
-       display: flex;
-    }
-    .right div.user-profile{
-        width: fit-content;
-        flex-shrink: 0;
-        position: relative;
-        z-index: 2;
-    }
-    .right div.user-profile > img{
-        height: 32px;
-        width: 32px;
-        margin-right: 8px;
-    }
-.img-lg-container .recording,
-.img-lg-container .user{
-    gap:6px;
-}
-.left > .heading > .heading-header{
-    font-size: var(--heading-06-16px);
-    font-weight: 500;
-    font-family: 'lato', sans-serif;
-}
-.left > .heading > .heading-text{
-    font-family: 'lato', sans-serif;
-    font-size: var(--text-14);
-    color: #666666;
-    font-weight: 500;
-}
-header.video-header{
-    height: 60px;
-}
-.video-header div.back-btn{
-    height: 40px;
-    width: 40px;
-}
-}
-
-@media (max-width: 521px){
-    div.content{
-        grid-template-columns: 1fr;
-        grid-template-rows: 300px;
-        grid-template-areas: 
-        'lg-video'
-        'sm-video'
-        'notes'
-        'up-next';
-        gap:20px;   
-    }
-    div.conteint .video-sesison-sm{
-        gap: 8px;
-        justify-content: center;
-    }
-    div.content .video-session-sm .sm-image-container{
-        height: 100px;
-    }
-    body{
-        padding-inline:0;
-    }
-
-    .video-session-lg img.lg-img {
-        border-radius: 0;
-    }
-    main{
-        width: 100%;
-    }
-    div.content{
-        width: 100%;
-        margin-top: 58px;
-    }
-
-    div.content .video-session-sm .sm-card:first-child{
-        display: none;
-    }
-    .video-session-lg{
-        height: 300px;
-    }
-
-
-    .user > div.user-name-start{
-        padding: 8px;
-    }
-
-    .right > .notification {
-        display:none;
-    }
-
-    .right div.user-profile > img{
-        height: 32px;
-        width: 32px;
-        margin-right: 8px;
-    }
-    .img-lg-container .recording,
-    .img-lg-container .user
-    {
-        display:none;
-    }
-
-    .bottom .titles p.session.description{
-        font-size: 12px;
-    }
-    .bottom .titles,
-    .heading
-    {
-        display: flex;
-        justify-content: top;
-        align-items: top;
-        flex-direction: column;
-        gap: 4px;
-        justify-self: start;
-        flex:1;
-        white-space: nowrap;
-        overflow: hidden;
-        clip-path: inset(0 5% 0 0);
-        z-index:2;
-    }
-   
-.user-controls .top{
-        display:none;
-    }
-
-    p.session.description .session-timer{
-        padding: 4px 8px;
-        margin-left: 8px;
-        border-radius: 20px;
-        font-size: 8px;
-    }
-    .bottom .titles p.session.description{
-        font-size: 10px;
-        color: var(--white);
-        font-weight: 300;
-    }
-    p.session.description .session-timer{
-       display: none;
-    }
-
-    .user-controls .bottom .vc-figure,
-    .bottom .session-controls {
-        flex-shrink: 0;
-    }
-    .user-controls .top{
-        display:none;
-    }
-    header.video-header{
-        top:0;
-        left:0;
-        right:0;
-        border-radius: 0;
-    }
 }
