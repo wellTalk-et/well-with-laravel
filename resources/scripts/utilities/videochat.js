@@ -2,9 +2,9 @@ import AgoraRTC from "agora-rtc-sdk-ng";
 import { sendUserLeftMessage } from "./manageuser";
 // token is expired
 
-const APP_ID = "4084dd82c82d463a869af0a56383e0c5"
-const TOKEN = '007eJxTYFiYr93X/9Taq8zTtWRLwAvlk/p/DFu03hRFSD9bNfvU9TYFBhMDC5OUFAujZAujFBMz40QLM8vENINEUzNjC+NUg2TTV1u/pjUEMjIwtZxgYIRCEJ+FoTw1J4eBAQB4VCCO'
-const CHANNEL = 'well';
+const APP_ID = "apppid"
+const TOKEN = 'token/token/p/DFu03hRFSD9bNfvU9TYFBhMDC5OUFAujZAujFBMz40QLM8vENINEUzNjC+NUg2TTV1u/pjUEMjIwtZxgYIRCEJ+FoTw1J4eBAQB4VCCO'
+const CHANNEL = 'channel';
 
 
 const localTracks = {
