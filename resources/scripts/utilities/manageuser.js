@@ -1,11 +1,11 @@
+import { manageRemoteUserLeft } from "./videochat";
+
 const rootUrl = 'http://localhost:8000';
 
 let consultationId = document.getElementById('data-user-id').dataset.consultationId;
 export const sendUserLeftMessage = async (uid) => {
     const formElem = document.querySelector('.form-elem');
     const token = formElem.querySelector("input[name='_token']").value;
-
-
 
     // Prevent default form submission
     formElem.addEventListener('submit', (e) => {
@@ -62,7 +62,8 @@ const isUserLeft = async()=>{
     })
     .then(data => {
         console.log('Someone sent: ', data);  // Log the received data
-        // manageRemoteUserLeft
+        manageRemoteUserLeft(data.user.id);
+
     })
     .catch(error => {
         console.log('Error!! ', error);  // Handle the error

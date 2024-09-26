@@ -23,4 +23,8 @@ class Consultation extends Model
     {
         return $this->belongsTo(Plan::class);
     }
+
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
 }

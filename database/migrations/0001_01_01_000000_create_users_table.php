@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('country');
             $table->string('status')->default('not assigned');
+            $table->string('profile_picture')->default('default_user.jpg'); 
             $table->rememberToken();
             $table->timestamps();
         });

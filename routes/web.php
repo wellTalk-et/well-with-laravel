@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ManageChat;
 use App\Http\Controllers\ManageUser;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PlanController;
@@ -35,3 +36,10 @@ Route::get('/session/{consultation}', [VideoSessionController::class, 'index'])-
 
 Route::get('/session/{consultation}/user-left', [ManageUser::class, 'isUserLeft']);
 Route::post('/session/{consultation}/user-left', [ManageUser::class, 'userLeft']);
+
+
+Route::get('/session/{consultation}/chat-messages', [ManageChat::class, 'recieveChatMessage']);
+Route::post('/session/{consultation}/chat-messages', [ManageChat::class, 'sendChatMessage']);
+
+
+

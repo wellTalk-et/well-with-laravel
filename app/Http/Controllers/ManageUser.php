@@ -17,7 +17,7 @@ class ManageUser extends Controller
         $userLeftUid = $request['user_uid'];
         $consultationId = $request['consultation_id'];
         UserLeft::dispatch(Auth::user(), $userLeftUid);
-        User::where('id', Auth::user()->id)->update(['status' => "left " . $consultationId]);
+        User::where('id', Auth::user()->id)->update(['status' => "left $consultationId"]);
 
         return response()->json(['success' => true, 'message' => 'User left the meeting']);
 
@@ -26,10 +26,7 @@ class ManageUser extends Controller
     public function isUserLeft(Consultation $consultation) 
     {
         // Find the user with status false related to the specific consultation
-        $user = User::where('status', "left ".$consultation->id)->first();
-
-        User::where()->update(['status' => "not assigned"]);
-
+        $user = User::where('status', "left $consultation->id")->first();
         
         if ($user) {
             return response()->json([

@@ -47,6 +47,7 @@
       </div>
   </header>
   <main>
+
         <section class="left-section">
             <div class="highlighted-user-overlay">
                 <div class="chat-section"></div>
@@ -110,8 +111,35 @@
                     </div>
                 </div>
                 <div class="chat-container js-chat-container">
-                   <div class="chats">
-                    <div class="single-chat left">
+                   <div class="chats js-chats">
+                    @foreach($consultation->messages as $message)
+                        @if($message->user_id === Auth::user()->id)
+                        <div class="single-chat right">
+                        <div class="message-container left">
+                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc</p>
+                        </div>
+    
+                        <div class="user-images">
+                        <div class="user-image">
+                            <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
+                        </div>
+                        </div>
+                    </div>
+                        @else
+                        <div class="single-chat left">
+                        <div class="user-images">
+                          <div class="user-image">
+                              <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
+                          </div>
+                        </div>
+                      <div class="message-container">
+                          <p class="message">{{$message->message}}</p>
+                      </div>
+                    </div>
+
+                        @endif
+                    @endforeach
+                    <!-- <div class="single-chat left">
                         <div class="user-images">
                           <div class="user-image">
                               <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
@@ -177,43 +205,45 @@
                         </div>
                     </div>
                     <div class="single-chat left">
-                    <div class="user-images">
-                        <div class="user-image">
-                            <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
+                        <div class="user-images">
+                            <div class="user-image">
+                                <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="message-container">
+                       <div class="message-container">
                         <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc</p>
-                    </div>
+                       </div>
                     </div>
                     <div class="single-chat left">
-                    <div class="user-images">
+                       <div class="user-images">
                         <div class="user-image">
                             <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
                         </div>
-                    </div>
-                    <div class="message-container">
-                    <div class="file-container">
-                        <div class="file">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 file-upload-icon">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                         </div>
+                        <div class="message-container">
+                        <div class="file-container">
+                            <div class="file">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 file-upload-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
                         </svg>
                         </div>
-                    </div>
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc</p>
-                    </div>
-                    </div>
+                        </div>
+                            <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc</p>
+                        </div>
+                    </div> -->
                 </div>
+                <form action="session/{{$consultation->id}}/chat-messages" method="POST" class="form-send-btn">
                 <div class="message-input">
-                  <input type="text" class="input" name="message">
-                  <button class="send-btn">
+                  <input type="text" class="input input-message" name="message" required>
+                    @csrf
+                  <button class="send-btn" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 paper-plane send-icon">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                     </svg>
                   </button>
                 </div>
-      
-              </div>
+            </div>
+        </form>
       
                 
             </div>
@@ -367,6 +397,7 @@
 @vite([
         'resources/js/app.js',
         'resources/scripts/utilities/videochat.js',
+        'resources/utilities/manageuser.js',
     ])
 </body>
 </html>

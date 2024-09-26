@@ -3,7 +3,7 @@ import { sendUserLeftMessage } from "./manageuser";
 // token is expired
 
 const APP_ID = "4084dd82c82d463a869af0a56383e0c5"
-const TOKEN = '007eJxTYGh5YNR75UNt9vZJ9+UfLwv6PqVa/P3zavUqsX5/bSMZtU0KDCYGFiYpKRZGyRZGKSZmxokWZpaJaQaJpmbGFsapBsmmrMlf0hoCGRneWMuyMjJAIIjPwlCempPDwAAAh14fVw=='
+const TOKEN = '007eJxTYFiYr93X/9Taq8zTtWRLwAvlk/p/DFu03hRFSD9bNfvU9TYFBhMDC5OUFAujZAujFBMz40QLM8vENINEUzNjC+NUg2TTV1u/pjUEMjIwtZxgYIRCEJ+FoTw1J4eBAQB4VCCO'
 const CHANNEL = 'well';
 
 
@@ -152,15 +152,15 @@ let leaveStream = async (e) => {
     // the current user doesn't wont handle the user left so we will have the event to tell him
 };
 
-manageRemoteUserLeft = (userLeftId)=>{
+export const manageRemoteUserLeft = (userLeftId)=>{
     const highlightedElem = document.querySelector('.js-highlighted-user');
     const videoSessionElem = document.querySelector('.js-video-sessions');
     let clientElems = videoSessionElem.querySelectorAll('.client');
     const highlightedElemOverlay = document.querySelector('.highlighted-user-overlay');
-
-    document.getElementById(`user-${userLeftId}`).remove();
-
-
+    let userElem= document.getElementById(`user-${userLeftId}`)
+    if(userElem){
+        userElem.remove();
+    }
 
 }
 

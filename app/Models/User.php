@@ -57,5 +57,24 @@ class User extends Authenticatable
     public function client(){
         return $this->hasOne(Client::class);
     }
+    
+    public function messages(){
+        return $this->hasMany(Message::class);
+    }
+
+    public function canJoinConsultation($consultationId){
+        // get the client
+        $client = $this->client;
+        $doctor = $this->doctor;
+        if($client)
+            // check if the client have that consultation
+        return $client->consultations()->where('id', $consultationId)->exists();
+        else
+            // check if the doctor have that consultation
+            return $doctor->consultations()->where('id', $consultationId)->exists();
+        
+        // return the result
+        return false;
+    }
 
 }

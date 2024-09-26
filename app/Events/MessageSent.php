@@ -2,6 +2,8 @@
 
 namespace App\Events;
 
+use App\Models\Consultation;
+use App\Models\Message;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
@@ -10,16 +12,14 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UserLeft implements ShouldBroadcast
+class MessageSent implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(public $user, 
-                                public $uid,
-                                )
+    public function __construct(public Message $message)
     {
         //
     }
@@ -32,15 +32,8 @@ class UserLeft implements ShouldBroadcast
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel('user_left'),
+            // new PrivateChannel('recieve_messages.'. $this->consultation->id ),
+            new PrivateChannel('receive_messages.' .$this->message->consultation_id),
         ];
     }
-
-    // public function broadcastWith(): array
-    // {
-    //     return [
-    //         'user_id' => $this->user->id,
-    //         'username' => $this->user->name,
-    //     ];
-    // }
 }

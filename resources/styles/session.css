@@ -270,7 +270,6 @@ main{
 
 .left-section,
 .right-section{
-    border: 2px solid black;
 }
 .left-section{
     flex: 1;
@@ -287,7 +286,6 @@ main{
     justify-self: center;
     gap: 16px;
     max-width: 800px;
-    border: 1px solid black;
 }
 
 
@@ -316,7 +314,6 @@ main{
     right: 40px;    
     min-height: 800px;
     z-index: 1001;
-    border: 1px solid green;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -326,7 +323,6 @@ main{
     display: none;
 }
 .highlighted-user-overlay > *{
-    border: 1px solid black;
 }
 .highlighted-user-overlay *{
     background-color: transparent !important;    
@@ -390,13 +386,13 @@ align-self: stretch;
     right: 0;
     left: 0;
     background: linear-gradient(to bottom,#c6c6c681, transparent);
-    z-index: 1; /* Ensure it sits on top of the messages */
-    pointer-events: none; /* Allow clicks to go through */
+    z-index: 1; 
+    pointer-events: none; 
 }
 
 .highlighted-user{
-    min-height: 460px;
-    border: 1px solid black;
+    min-height: 360px;
+    border-radius: 12px;
     background-color: var(--neutral-10);
     overflow: hidden;
 }
@@ -785,7 +781,7 @@ p.session.description .session-timer{
     scroll-behavior: smooth;
     padding: 8px;
     background-color: #f9f9f9;
-    max-height: 554px;
+    max-height: 320px;
 }
  .single-chat:first-child{
     margin-top: 12px;
