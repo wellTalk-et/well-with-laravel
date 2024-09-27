@@ -16,7 +16,13 @@ class VideoSessionController extends Controller
      */
     public function index(Consultation $consultation)
     {
-        return view('session', ['consultation'=> $consultation]);
+        $nextConsultation = $consultation->doctor->next_consultation;
+        $consultationCount = $consultation->doctor->count_todaysConsultation;
+        return view('session', [
+            'consultation'=> $consultation,
+            'doctor_nextConsultation' => $nextConsultation,
+            'doctor_consultation_count' => $consultationCount,
+        ]);
     }
 
     /**

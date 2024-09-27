@@ -25,8 +25,8 @@
                 </svg>
             </div>
             <div class="heading">
-                <p class="heading-header">Meeting with {{Auth::user()->username}}</p>
-                <p class="heading-text">Today you have 6 meetings planned</p>
+                <p class="heading-header">Meeting with {{$consultation->doctor->user->id === Auth::user()->id ? $consultation->client->user->username: $consultation->doctor->user->username }}</p>
+                <p class="heading-text">{{ Auth::user()->doctor ? "you have ". $consultation->doctor->count_todays_consultation . " additional meetings." : ''}}</p>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
                 <span class="notification-count">3</span>
           </div>
           <div class="user-profile">
-            <x-image path="resources/assets/users/provider-1.jpg" alt="your profile picture" class="profile-image" />
+            <x-image path="{{ 'storage/app/public/users/' . Auth::user()->profile_picture }}" alt="your profile picture" class="profile-image" />
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 chevron-down">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                 </svg>
@@ -66,17 +66,31 @@
          <div class="vc-bottom flex justify-between">
             <div class="next-meeting">
                 <p class="up-next">Up Next</p>
-                <div class="members">
-                <div class="members-pic">
-                    <x-image path="resources/assets/users/provider-1.jpg" alt="images" class="up-next-image" /> <x-image path="resources/assets/users/provider-1.jpg" alt="images" class="up-next-image" />
-                </div>
-                <p class="members-name">Abel & Jenna</p>
-                </div>
-                <div class="session-description">
-                    <p class="session-type">Couple Meeting</p>
-                    <p class="members-name">with Abel & Jenna</p>
-                    <p class="date-time">10:30 Am January 30</p>
-                </div>
+                @if($doctor_nextConsultation && Auth::user()->id === $doctor_nextConsultation->doctor->user->id)
+                    <div class="members">
+                        <div class="members-pic">
+                            @foreach($doctor_nextConsultation->all_users as $user)
+                            <x-image path="{{'storage/app/public/users/' . $user->user->profile_picture}}" alt="images" class="up-next-image" />  
+                            @endforeach                         
+                        </div>
+                        <p class="members-name">{{$doctor_nextConsultation->client->user->username}}</p>
+                    </div>
+                    <div class="session-description">
+                        <p class="session-type">{{$doctor_nextConsultation->title}}</p>
+                        <p class="members-name">with {{$doctor_nextConsultation->client->user->username}}</p>
+                        <p class="date-time">{{$doctor_nextConsultation->formatted_created_at}}</p>
+                    </div>
+                @else
+
+                    <div class="members">
+                        <div class="members-pic">
+                            <x-image path="{{'storage/app/public/users/' . Auth::user()->profile_picture}}" alt="images" class="up-next-image" /> 
+                        </div>
+                        <p class="session-type">You don't have meetings for today</p>
+                    </div>
+
+                @endif
+
             </div>
             <div class="notes">
                 <p>Notes</p>
@@ -116,20 +130,19 @@
                         @if($message->user_id === Auth::user()->id)
                         <div class="single-chat right">
                         <div class="message-container left">
-                        <p class="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inc</p>
+                        <p class="message">{{$message->message}}</p>
                         </div>
     
                         <div class="user-images">
                         <div class="user-image">
-                            <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
-                        </div>
+                        <x-image path="{{ 'storage/app/public/users/' . $message->user->profile_picture }}" alt="your profile picture" class="profile-image" />                        </div>
                         </div>
                     </div>
                         @else
                         <div class="single-chat left">
                         <div class="user-images">
                           <div class="user-image">
-                              <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
+                            <x-image path="{{ 'storage/app/public/users/' . $message->user->profile_picture }}" alt="your profile picture" class="profile-image" />
                           </div>
                         </div>
                       <div class="message-container">
@@ -277,8 +290,8 @@
                 <x-image path="resources/assets/icons/voice-figure.svg" alt="voice figure" class="voice-figure" />
             </div>
             <div class="titles">
-                <p class="session description">4/16 sessions with Dr.Abel <span class="session-timer">30:10</span></p>
-                <p class="session title">How to live happy life more life easily. </p>
+                <p class="session description">4/16 sessions with Dr.Abel</p>
+                <p class="session title">{{ $consultation->title }} </p>
             </div>
             <div class="session-controls">
                 <div class="control flex align-center justify-center">

@@ -40,6 +40,8 @@ const sendMessageRequest = async ()=>{
         console.error('There was a problem with the fetch operation:', error);
     });
 
+    message.value = '';
+
 }
 
 
@@ -80,10 +82,12 @@ const recieveNewMessage = async()=>{
     .catch(error => {
         console.log('Error!! ', error); 
     });
+    // const lastChatUi = document.querySelector('.js-chats')
+    // lastChatUi.document.querySelector('img').src = lastChatUi.dataset.imageUrl;
 }
 
 
-const updateChat = (message)=>{
+const updateChat = async (message)=>{
 
     const chatLeft = `
                      <div class="single-chat left">
@@ -99,14 +103,14 @@ const updateChat = (message)=>{
                     `
     
     const chatRight = `
-                    <div class="single-chat right">
+                    <div class="single-chat right" data-image-url="{{ Vite::asset('storage/app/public/users/' . Auth::user()->profile_picture) }}">
                         <div class="message-container left">
                         <p class="message">${message.message}</p>
                         </div>
     
                         <div class="user-images">
                         <div class="user-image">
-                             <x-image path="resources/assets/users/provider-1.jpg" alt="member picture" />
+                             <img path="resources/assets/users/provider-1.jpg" alt="member picture">
                         </div>
                         </div>
                     </div>
@@ -119,5 +123,6 @@ const updateChat = (message)=>{
     }
 
     chatContainer.insertAdjacentHTML('beforeend', chatUi);
+    
 
 }

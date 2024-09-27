@@ -782,6 +782,7 @@ p.session.description .session-timer{
     padding: 8px;
     background-color: #f9f9f9;
     max-height: 320px;
+    min-height: 320px;
 }
  .single-chat:first-child{
     margin-top: 12px;

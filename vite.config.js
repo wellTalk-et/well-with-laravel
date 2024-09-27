@@ -9,13 +9,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-
-    server: {
-        host: 'localhost',
-        https: true,
-        https: {
-          key: fs.readFileSync('./well-with-laravel.test-key.pem'),
-          cert: fs.readFileSync('./well-with-laravel.test.pem'),
-        },
-      },
 });
