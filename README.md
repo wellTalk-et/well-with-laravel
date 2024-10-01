@@ -43,15 +43,13 @@ Ensure you have the following tools installed on your system:
 - [Node.js](https://nodejs.org/) (>= 14.x)
 - [NPM](https://www.npmjs.com/)
 - [Laravel](https://laravel.com/) (>= 9.x)
-- [Vite](https://vitejs.dev/)
 
 
 ### Installation
 
 1. **Clone the repository:**
 
-    `git clone git@github.com:wellTalk-et/well-with-laravel.git`
-    `cd well-with-laravel`
+    `git clone git@github.com:wellTalk-et/well-with-laravel.git && cd well-with-laravel`
 
     <br>
 
