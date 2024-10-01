@@ -43,7 +43,6 @@ Ensure you have the following tools installed on your system:
 - [Node.js](https://nodejs.org/) (>= 14.x)
 - [NPM](https://www.npmjs.com/)
 - [Laravel](https://laravel.com/) (>= 9.x)
-- [Vite](https://vitejs.dev/)
 
 
 ### Installation
