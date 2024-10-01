@@ -2,9 +2,7 @@
 <body>
      <div class="progress-bar js-progress-bar"></div>
     <main>  
-        @auth
-        <h1>{{ Auth::user()->first_name}}</h1>
-        @endauth
+
     <div id="question-data" data-questions='@json($questions)'></div>
         <form class="question-form js-question-form" action="/questions" method="POST">
             @csrf

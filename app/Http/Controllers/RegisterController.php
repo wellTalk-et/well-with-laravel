@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 
+use Laravel\Passport\Passport;
+ 
+
+
 class RegisterController extends Controller
 {
     /**
@@ -15,6 +19,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
+        Passport::ignoreRoutes();
         return view('auth.register');
     }
 
@@ -23,6 +28,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
+        Passport::ignoreRoutes();
 
         // validate
         $attribute = $request->validate([

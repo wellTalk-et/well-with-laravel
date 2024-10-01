@@ -41,5 +41,3 @@ Route::post('/session/{consultation}/user-left', [ManageUser::class, 'userLeft']
 Route::get('/session/{consultation}/chat-messages', [ManageChat::class, 'recieveChatMessage']);
 Route::post('/session/{consultation}/chat-messages', [ManageChat::class, 'sendChatMessage']);
 
-
-

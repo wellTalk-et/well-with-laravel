@@ -1,10 +1,10 @@
 import AgoraRTC from "agora-rtc-sdk-ng";
 import { sendUserLeftMessage } from "./manageuser";
-// token is expired
 
-const APP_ID = "apppid"
-const TOKEN = 'token/token/p/DFu03hRFSD9bNfvU9TYFBhMDC5OUFAujZAujFBMz40QLM8vENINEUzNjC+NUg2TTV1u/pjUEMjIwtZxgYIRCEJ+FoTw1J4eBAQB4VCCO'
-const CHANNEL = 'channel';
+
+const APP_ID  =  import.meta.env.VITE_APP_ID;
+const TOKEN  = import.meta.env.VITE_TOKEN;
+const CHANNEL = import.meta.env.VITE_CHANNEL;
 
 
 const localTracks = {

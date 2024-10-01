@@ -341,7 +341,6 @@ main{
 
 /* miniized user */
 .minimized-users{
-    border: 1px solid black;
     width: 360px;
     min-height: 300px; /* delete later*/
     display: flex;

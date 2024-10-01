@@ -7,15 +7,21 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
 
+use Laravel\Passport\Passport;
+ 
+
+
 class SessionController extends Controller
 {
     //
     public function create(){
+        Passport::ignoreRoutes();
         return view('auth.login');
     }
 
     public function store(Request $request){
 
+        Passport::ignoreRoutes();
         $attributes = $request->validate([
             'email_username' => ['required', 'min:4'],
             'password' => ['required', Password::min(6)]
@@ -47,6 +53,7 @@ class SessionController extends Controller
         Auth::logout();
         return redirect('/');
     }
+
 
 
 }
