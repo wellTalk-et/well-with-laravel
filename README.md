@@ -49,7 +49,7 @@ Ensure you have the following tools installed on your system:
 
 1. **Clone the repository:**
 
-    `git clone git@github.com:wellTalk-et/well-with-laravel.git & cd well-with-laravel`
+    `git clone git@github.com:wellTalk-et/well-with-laravel.git && cd well-with-laravel`
 
     <br>
 
