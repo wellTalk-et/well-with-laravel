@@ -876,3 +876,290 @@ p.session.description .session-timer{
     height: 20px;
     transform: rotate(-15deg);
 }
+
+
+
+
+
+
+
+
+@media (max-width: 1400px){
+    .video-header{
+        width: calc(1400px - 50px);
+        margin-inline:auto;
+    }
+        
+.content{
+    grid-column: 2;
+}
+}
+@media (max-width:  1300px){
+
+body{
+padding: 4px 24px;
+}
+header.video-header{
+left: 24px;
+right: 24px;
+width: 96%;
+}
+.video-session-lg{
+height: 450px;
+}
+.video-session-lg > .img-lg-container{
+
+position: relative;
+}
+
+div.content{
+grid-template-columns: 2fr 1fr;
+grid-template-rows: 450px 140px;
+grid-template-areas: 
+'lg-video chat'
+'sm-video chat';
+gap: 20px;
+}
+.video-session-sm{
+display: flex;
+flex-direction: row;
+gap:16px;
+
+}
+
+.video-session-sm .sm-image-container,
+.sm-image-container{
+height: 140px;
+width: 200px;
+}
+.more-button .chevron-down{
+transform: rotate(-90deg);
+}
+.content .next-meeting,
+.notes{
+display:none;
+}
+div.content .video-session-lg{
+grid-area: lg-video;
+}
+div.content .video-session-sm{
+grid-area: sm-video;
+}
+div.content .content-right.chat{
+grid-area: chat;
+}
+
+div.content .notes{
+grid-area: notes;
+}
+
+}
+
+
+@media (max-width: 840px){
+header.video-header{
+width: 80%;
+}
+section.right-section{
+    display: none;
+}
+
+div.vc-bottom{
+    align-self: center;
+}
+
+div.content{
+margin-top:80px;
+grid-template-columns: 1fr;
+grid-template-rows: 400px;
+grid-template-areas: 
+'lg-video'
+'sm-video';
+gap: 20px;
+}
+div.chat{
+display:none;
+}
+.video-session-lg{
+height: 400px;
+}
+.img-lg-container > .recording{
+width: fit-content;
+font-size: 14px;
+  
+}
+.recording .record-icon-transparent,
+.icon-container  *, 
+.right > .notification
+{
+width: 16px;
+height: 16px;
+gap: 4px;
+}
+.user > div.user-name-start{
+padding: 8px;
+}
+
+.right > .notification {
+width: 40px;
+height: 40px;
+}
+.right{
+display: flex;
+}
+.right div.user-profile{
+width: fit-content;
+flex-shrink: 0;
+position: relative;
+z-index: 2;
+}
+.right div.user-profile > img{
+height: 32px;
+width: 32px;
+margin-right: 8px;
+}
+.img-lg-container .recording,
+.img-lg-container .user{
+gap:6px;
+}
+.left > .heading > .heading-header{
+font-size: var(--heading-06-16px);
+font-weight: 500;
+font-family: 'lato', sans-serif;
+}
+.left > .heading > .heading-text{
+font-family: 'lato', sans-serif;
+font-size: var(--text-14);
+color: #666666;
+font-weight: 500;
+}
+header.video-header{
+height: 60px;
+}
+.video-header div.back-btn{
+height: 40px;
+width: 40px;
+}
+
+.user-controls{
+    width: 90%;
+}
+}
+
+@media (max-width: 521px){
+div.content{
+grid-template-columns: 1fr;
+grid-template-rows: 300px;
+grid-template-areas: 
+'lg-video'
+'sm-video'
+'notes'
+'up-next';
+gap:20px;   
+}
+div.conteint .video-sesison-sm{
+gap: 8px;
+justify-content: center;
+}
+div.content .video-session-sm .sm-image-container{
+height: 100px;
+}
+body{
+padding-inline:0;
+}
+
+.video-session-lg img.lg-img {
+border-radius: 0;
+}
+main{
+width: 100%;
+}
+div.content{
+width: 100%;
+margin-top: 58px;
+}
+
+div.content .video-session-sm .sm-card:first-child{
+display: none;
+}
+.video-session-lg{
+height: 300px;
+}
+
+
+.user > div.user-name-start{
+padding: 8px;
+}
+
+.right > .notification {
+display:none;
+}
+
+.right div.user-profile > img{
+height: 32px;
+width: 32px;
+margin-right: 8px;
+}
+.img-lg-container .recording,
+.img-lg-container .user
+{
+display:none;
+}
+
+.bottom .titles p.session.description{
+font-size: 12px;
+}
+.bottom .titles,
+.heading
+{
+display: flex;
+justify-content: top;
+align-items: top;
+flex-direction: column;
+gap: 4px;
+justify-self: start;
+flex:1;
+white-space: nowrap;
+overflow: hidden;
+clip-path: inset(0 5% 0 0);
+z-index:2;
+}
+
+.user-controls .top{
+display:none;
+}
+
+
+p.session.description .session-timer{
+padding: 4px 8px;
+margin-left: 8px;
+border-radius: 20px;
+font-size: 8px;
+}
+.bottom .titles p.session.description{
+font-size: 10px;
+color: var(--white);
+font-weight: 300;
+}
+p.session.description .session-timer{
+display: none;
+}
+.user-controls{
+    width: 90%;
+}
+.user-controls .bottom .vc-figure,
+.bottom .session-controls {
+flex-shrink: 0;
+}
+.user-controls .top{
+display:none;
+}
+header.video-header{
+top:0;
+left:0;
+right:0;
+border-radius: 0;
+margin: 0;  
+width: 100%;
+}
+}
