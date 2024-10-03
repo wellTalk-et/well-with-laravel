@@ -29,7 +29,6 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         Passport::ignoreRoutes();
-
         // validate
         $attribute = $request->validate([
             'first_name' => ['required'],
@@ -52,6 +51,6 @@ class RegisterController extends Controller
 
         Auth::login($user);
         return redirect('/questions');
-    }
+}
 
 }
